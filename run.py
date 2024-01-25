@@ -16,6 +16,35 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET =GSPREAD_CLIENT.open("tech_quiz")
 
-quiz = SHEET.worksheet("easy")
-data = quiz.get_all_values()
-print(data)
+# quiz = SHEET.worksheet("easy")
+# data = quiz.get_all_values()
+# print(data)
+
+def start_quiz():
+    print("Start quiz")
+
+def add_quiz():
+    print("Add quiz")
+
+def check_score():
+    print("Check score")
+
+def home(): 
+    """
+    Shows landing terminal for users to select an option
+    """
+    print("Welcome to the Tech Quiz\n")
+    print("This is a study tool for understanding technical knowledge\n")
+    print("Please select a number")
+    print("1. Start Quiz")
+    print("2. Add own quiz and answers")
+    print("3, Check your score\n")
+    pick_number = int(input("And enter a number here"))
+    if pick_number == 1:
+        start_quiz()
+    elif pick_number == 2:
+        add_quiz()
+    elif pick_number == 3:
+        check_score()
+
+home()
