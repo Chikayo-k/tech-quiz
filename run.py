@@ -31,7 +31,7 @@ def check_score():
 
 def home(): 
     """
-    Shows landing terminal for users to select an option
+    Shows a landing terminal for users to select an option
     """
     print("Welcome to the Tech Quiz\n")
     print("This is a study tool for understanding technical knowledge\n")
@@ -39,12 +39,16 @@ def home():
     print("1. Start Quiz")
     print("2. Add own quiz and answers")
     print("3, Check your score\n")
-    pick_number = int(input("And enter a number here"))
-    if pick_number == 1:
+    
+    pick_number = input("And enter a number here")
+    if pick_number == "1":
         start_quiz()
-    elif pick_number == 2:
+    elif pick_number == "2":
         add_quiz()
-    elif pick_number == 3:
+    elif pick_number == "3":
         check_score()
+    else:
+        print("Please enter a number between 1 and 3")
+
 
 home()
