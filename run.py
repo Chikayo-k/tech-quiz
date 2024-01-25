@@ -29,6 +29,26 @@ def add_quiz():
 def check_score():
     print("Check score")
 
+def select_menu():
+    """
+    menu selection 
+    """
+    count = 0
+    while count <= 0:
+        num_selection = input("Please enter a number between 1 and 3 : ")           
+        if num_selection  == "1":
+            count += 1
+            start_quiz()
+        elif num_selection == "2":
+            add_quiz()
+            count += 1  
+        elif num_selection == "3":
+            check_score()
+            count += 1
+        else:
+            print("Input is only valid number between 1 and 3")
+           
+
 def home(): 
     """
     Shows a landing terminal for users to select an option
@@ -39,16 +59,9 @@ def home():
     print("1. Start Quiz")
     print("2. Add own quiz and answers")
     print("3, Check your score\n")
-    
-    pick_number = input("And enter a number here")
-    if pick_number == "1":
-        start_quiz()
-    elif pick_number == "2":
-        add_quiz()
-    elif pick_number == "3":
-        check_score()
-    else:
-        print("Please enter a number between 1 and 3")
+    select_menu()  
+        
+        
 
 
 home()
