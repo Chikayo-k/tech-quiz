@@ -6,6 +6,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import random
 
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -88,7 +89,7 @@ def get_game_data(game_mode):
     easy_quiz_data =SHEET.worksheet("easy")
     hard_quiz_data =SHEET.worksheet("hard")
     if game_mode == "easy":
-       quiz_data = easy_quiz_data.get_all_values()
+        quiz_data = easy_quiz_data.get_all_values()
     else:
         quiz_data = hard_quiz_data.get_all_values() 
     global quiz_material
@@ -97,33 +98,38 @@ def get_game_data(game_mode):
 
 def show_question():
 
-    quiz_length = len(quiz_material)   
-    
-    # while game_count < 5:
-        
-    random_question_num =random.randrange(0,quiz_length-1)
-    used_question_num =[]
-    
-    if not random_question_num in used_question_num:
-        
-        print(quiz_material[random_question_num][0])
-        correct_answer = str(quiz_material[random_question_num][1])            
-        used_question_num.append(random_question_num)
-        
-        print("1.True or 2.False?")
-        user_answer = input("Please put number")
-        
-        if user_answer == correct_answer:
-            print("your answer is correct!")
-        else:
-            print("Your answer was wrong")
-            
+    random_question_num =random.sample(quiz_material,5)
+    game_count = 0
+    score = 0   
+    if game_count <= 5:          
+        for x in random_question_num:
+            game_count += 1
+            print(x[0])
+            print("1.True or 2.False? ")
+            # Reference
+            # https://stackoverflow.com/questions/59692444/how-do-create-while-loop-input-for-accept-only-1-or-2-as-input-in-python
+            user_answer=0
+            try:
+                while user_answer not in range(1,3):
+                    user_answer = int(input("Pleas Enter a number\n"))
+            except:
+                print("Enter a number 1 or 2\n")
+                        
+            correct_answer = int(x[1])   
+            if user_answer == correct_answer:
+                print("your answer is correct!\n")
+                score += 20
+            else:
+                print("Your answer was wrong\n")
+    print(f"your score is {score} !!\n")
+
+
 
 def game_functions():
     """
     All game functionality
     """
-    print("Lets's start!")
+    print("Lets's start!\n")
     show_question()
 
 home()
