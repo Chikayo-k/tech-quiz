@@ -66,7 +66,6 @@ def select_menu():
             count += 1
         else:
             print("Input is only valid number between 1 and 3 : ")
-           
 
 def home(): 
     """
@@ -88,35 +87,46 @@ def get_game_data(game_mode):
     print(f"Start {game_mode} mode game! \n") 
     easy_quiz_data =SHEET.worksheet("easy")
     hard_quiz_data =SHEET.worksheet("hard")
-   
     if game_mode == "easy":
-         quiz_data = easy_quiz_data.get_all_values()
+       quiz_data = easy_quiz_data.get_all_values()
     else:
         quiz_data = hard_quiz_data.get_all_values() 
     global quiz_material
     quiz_material = quiz_data
     game_functions()
-    
+
 def show_question():
-    print("question")
+
+    quiz_length = len(quiz_material)   
+    
+    # while game_count < 5:
+        
+    random_question_num =random.randrange(0,quiz_length-1)
+    used_question_num =[]
+    
+    if not random_question_num in used_question_num:
+        
+        print(quiz_material[random_question_num][0])
+        correct_answer = str(quiz_material[random_question_num][1])            
+        used_question_num.append(random_question_num)
+        
+        print("1.True or 2.False?")
+        user_answer = input("Please put number")
+        
+        if user_answer == correct_answer:
+            print("your answer is correct!")
+        else:
+            print("Your answer was wrong")
+            
 
 def game_functions():
     """
     All game functionality
     """
     print("Lets's start!")
-    game_count = 0
-
-    if game_count<5:
-        show_question()
-
-
-
-   
+    show_question()
 
 home()
-        
-
 
 
 
