@@ -4,6 +4,7 @@
 
 import gspread
 from google.oauth2.service_account import Credentials
+import random
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -20,11 +21,22 @@ SHEET =GSPREAD_CLIENT.open("tech_quiz")
 # data = quiz.get_all_values()
 # print(data)
 
-def start_easy_game():
-    print("Start easy game!")
+def get_game_data(game_mode):
+    """
+    Get quiz and answer from spreadsheet 
+    """
+    print(f"Start {game_mode} mode game! \n") 
+    easy_quiz_data =SHEET.worksheet("easy")
+    hard_quiz_data =SHEET.worksheet("hard")
+   
+    if game_mode == "easy":
+         quiz_data = easy_quiz_data.get_all_values()
+    else:
+        quiz_data = hard_quiz_data.get_all_values() 
+    game_functions(quiz_data)
 
-def start_hard_game():
-    print("Start hard game!")
+def  game_functions(quiz_data):
+    print(quiz_data)
 
 def pick_quiz_mode():
     """
@@ -36,13 +48,13 @@ def pick_quiz_mode():
 
     count = 0
     while count <= 0:
-        play_mode = input("Please enter a number 1 or 2")
+        play_mode = input("Please enter a number 1 or 2 : ")
 
         if play_mode == "1":
-            start_easy_game()
+            get_game_data("easy")
             count =+ 1
         elif play_mode == "2":
-            start_hard_game()
+            get_game_data("hard")
             count += 1
         else:
             print("Input is only valid 1 or 2")
@@ -71,7 +83,7 @@ def select_menu():
             check_score()
             count += 1
         else:
-            print("Input is only valid number between 1 and 3")
+            print("Input is only valid number between 1 and 3 : ")
            
 
 def home(): 
@@ -84,9 +96,9 @@ def home():
     print("1. Start Quiz")
     print("2. Add own quiz and answers")
     print("3, Check your score\n")
-    select_menu()  
-        
-        
+    select_menu() 
+
 
 
 home()
+
