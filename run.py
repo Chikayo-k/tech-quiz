@@ -20,24 +20,6 @@ SHEET =GSPREAD_CLIENT.open("tech_quiz")
 # quiz = SHEET.worksheet("easy")
 # data = quiz.get_all_values()
 # print(data)
-
-def get_game_data(game_mode):
-    """
-    Get quiz and answer from spreadsheet 
-    """
-    print(f"Start {game_mode} mode game! \n") 
-    easy_quiz_data =SHEET.worksheet("easy")
-    hard_quiz_data =SHEET.worksheet("hard")
-   
-    if game_mode == "easy":
-         quiz_data = easy_quiz_data.get_all_values()
-    else:
-        quiz_data = hard_quiz_data.get_all_values() 
-    game_functions(quiz_data)
-
-def  game_functions(quiz_data):
-    print(quiz_data)
-
 def pick_quiz_mode():
     """
     Give users to select an easy play mode or hard pay mode
@@ -99,6 +81,43 @@ def home():
     select_menu() 
 
 
+def get_game_data(game_mode):
+    """
+    Get quiz and answer from spreadsheet 
+    """
+    print(f"Start {game_mode} mode game! \n") 
+    easy_quiz_data =SHEET.worksheet("easy")
+    hard_quiz_data =SHEET.worksheet("hard")
+   
+    if game_mode == "easy":
+         quiz_data = easy_quiz_data.get_all_values()
+    else:
+        quiz_data = hard_quiz_data.get_all_values() 
+    global quiz_material
+    quiz_material = quiz_data
+    game_functions()
+    
+def show_question():
+    print("question")
+
+def game_functions():
+    """
+    All game functionality
+    """
+    print("Lets's start!")
+    game_count = 0
+
+    if game_count<5:
+        show_question()
+
+
+
+   
 
 home()
+        
+
+
+
+
 
