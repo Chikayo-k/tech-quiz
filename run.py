@@ -114,7 +114,8 @@ def show_question():
                     user_answer = int(input("Pleas Enter a number\n"))
             except:
                 print("Enter a number 1 or 2\n")
-                        
+                user_answer = int(input("Pleas Enter a number\n"))
+            
             correct_answer = int(x[1])   
             if user_answer == correct_answer:
                 print("your answer is correct!\n")
@@ -133,7 +134,3 @@ def game_functions():
     show_question()
 
 home()
-
-
-
-
