@@ -123,6 +123,28 @@ def show_question():
             else:
                 print("Your answer was wrong\n")
     print(f"your score is {score} !!\n")
+    continue_or_home()
+    
+def continue_or_home():
+    """
+    User can choose to play again or go back home after completing the game
+    """
+    print("Do you want to play again?\n")
+    user_choice=0
+    
+    try:
+        while user_choice not in range(1,3):
+            user_choice = int(input("1. Yes 2. No\n"))
+    except:
+        print("Enter a number 1 or 2\n")
+        user_choice = int(input("1. Yes 2. No\n"))
+        
+    if user_choice == 1:
+        show_question()
+    else:
+        home()
+
+    
 
 
 
