@@ -94,10 +94,13 @@ def get_game_data(game_mode):
         quiz_data = hard_quiz_data.get_all_values() 
     global quiz_material
     quiz_material = quiz_data
-    game_functions()
+    game_start()
 
-def show_question():
-
+def game_start():
+    """
+    Game starts and display questions and correct answers
+    """  
+    print("Lets's start!\n")
     random_question_num =random.sample(quiz_material,5)
     game_count = 0
     score = 0   
@@ -140,19 +143,8 @@ def continue_or_home():
         user_choice = int(input("1. Yes 2. No\n"))
         
     if user_choice == 1:
-        show_question()
+        game_start()
     else:
         home()
-
-    
-
-
-
-def game_functions():
-    """
-    All game functionality
-    """
-    print("Lets's start!\n")
-    show_question()
 
 home()
