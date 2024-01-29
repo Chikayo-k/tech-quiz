@@ -6,7 +6,8 @@ import gspread
 from google.oauth2.service_account import Credentials
 import random
 import emoji
-
+import os
+import time
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -111,7 +112,8 @@ def get_game_data(game_mode):
 def game_start():
     """
     Game starts and display questions and correct answers
-    """  
+    """ 
+    os.system("cls") 
     art = show_text_art("assets/text-art/start.txt")
     print(art)
     random_question_num =random.sample(quiz_material,5)
@@ -136,11 +138,14 @@ def game_start():
             correct_answer = int(x[1])   
             if user_answer == correct_answer:
                 print(emoji.emojize("\n Your answer is correct! :check_mark_button: \n"))
+                time.sleep(2)
                 score += 20
             else:
                 print(emoji.emojize("\n Your answer was wrong :cross_mark:\n"))
+                time.sleep(2)
     
     print(emoji.emojize(f":light_bulb: Your score is {score} :light_bulb:\n"))
+    time.sleep(2)
     continue_or_home()
     
 def continue_or_home():
@@ -160,6 +165,7 @@ def continue_or_home():
     if user_choice == 1:
         game_start()
     else:
+        os.system("cls") 
         home()
 
 home()
