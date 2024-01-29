@@ -27,9 +27,11 @@ def pick_quiz_mode():
     """
     Give users to select an easy play mode or hard pay mode
     """
+    os.system("cls")
+    print("\n----------  Play Mode ----------\n")
     print("\nWould you like to play EASY mode or HARD mode ? \n")
     print(emoji.emojize(":hatching_chick: 1. EASY"))
-    print(emoji.emojize(":chicken: 2. Hard"))
+    print(emoji.emojize(":chicken: 2. Hard\n"))
 
     count = 0
     while count <= 0:
@@ -87,7 +89,7 @@ def home():
     print(art)
     print(emoji.emojize(" :star: Welcome to the Tech Quiz :star: \n"))
     print("This is a study tool for understanding technical knowledge\n")
-    print("Please select a number")
+    print("----------  Menu  ----------\n")
     print(emoji.emojize(":triangular_flag: 1  Start Quiz"))
     print(emoji.emojize(":pencil:  2  Add own quiz and answers"))
     print(emoji.emojize(":laptop: 3  Check your score\n"))
@@ -130,9 +132,9 @@ def game_start():
             user_answer=0
             try:
                 while user_answer not in range(1,3):
-                    user_answer = int(input("Pleas Enter a number\n"))
+                    user_answer = int(input("Please enter a number 1 or 2 : \n"))
             except:
-                print("Enter a number 1 or 2\n")
+                print("Please enter a number 1 or 2 : \n")
                 user_answer = int(input("Pleas Enter a number\n"))
             
             correct_answer = int(x[1])   
@@ -141,10 +143,12 @@ def game_start():
                 print(emoji.emojize("\n Your answer is correct! :check_mark_button: \n"))
                 time.sleep(2)
                 score += 20
+                os.system("cls")
             else:
                 time.sleep(1)
                 print(emoji.emojize("\n Your answer was wrong :cross_mark:\n"))
                 time.sleep(2)
+                os.system("cls")
     
     art = show_text_art("assets/text-art/score.txt")
     print(art)
@@ -163,7 +167,7 @@ def continue_or_home():
         while user_choice not in range(1,3):
             user_choice = int(input("1. Yes 2. No\n"))
     except:
-        print("Enter a number 1 or 2\n")
+        print("Please enter a number 1 or 2 : \n")
         user_choice = int(input("1. Yes 2. No\n"))
         
     if user_choice == 1:
