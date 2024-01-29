@@ -146,6 +146,8 @@ def game_start():
                 print(emoji.emojize("\n Your answer was wrong :cross_mark:\n"))
                 time.sleep(2)
     
+    art = show_text_art("assets/text-art/score.txt")
+    print(art)
     print(emoji.emojize(f":light_bulb: Your score is {score} :light_bulb:\n"))
     time.sleep(2)
     continue_or_home()
