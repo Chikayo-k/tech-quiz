@@ -137,10 +137,12 @@ def game_start():
             
             correct_answer = int(x[1])   
             if user_answer == correct_answer:
+                time.sleep(1)
                 print(emoji.emojize("\n Your answer is correct! :check_mark_button: \n"))
                 time.sleep(2)
                 score += 20
             else:
+                time.sleep(1)
                 print(emoji.emojize("\n Your answer was wrong :cross_mark:\n"))
                 time.sleep(2)
     
