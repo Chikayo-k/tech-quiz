@@ -5,6 +5,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import random
+import emoji
 
 
 SCOPE = [
@@ -72,14 +73,14 @@ def home():
     """
     Shows a landing terminal for users to select an option
     """
-    print("Welcome to the Tech Quiz\n")
+    print(emoji.emojize(" :star: Welcome to the Tech Quiz :star: \n"))
     print("This is a study tool for understanding technical knowledge\n")
     print("Please select a number")
-    print("1. Start Quiz")
-    print("2. Add own quiz and answers")
-    print("3, Check your score\n")
+    print(emoji.emojize(":triangular_flag: 1. Start Quiz"))
+    print(emoji.emojize(":pencil:  2. Add own quiz and answers"))
+    print(emoji.emojize(":laptop: 3. Check your score\n"))
     select_menu() 
-
+    
 
 def get_game_data(game_mode):
     """
@@ -121,11 +122,12 @@ def game_start():
             
             correct_answer = int(x[1])   
             if user_answer == correct_answer:
-                print("your answer is correct!\n")
+                print(emoji.emojize("\n Your answer is correct! :check_mark_button: \n"))
                 score += 20
             else:
-                print("Your answer was wrong\n")
-    print(f"your score is {score} !!\n")
+                print(emoji.emojize("\n Your answer was wrong :cross_mark:\n"))
+    
+    print(emoji.emojize(f":light_bulb: Your score is {score} :light_bulb:\n"))
     continue_or_home()
     
 def continue_or_home():
