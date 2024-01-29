@@ -27,8 +27,8 @@ def pick_quiz_mode():
     Give users to select an easy play mode or hard pay mode
     """
     print("\nWould you like to play EASY mode or HARD mode ? \n")
-    print("1. EASY")
-    print("2. Hard")
+    print(emoji.emojize(":hatching_chick: 1. EASY"))
+    print(emoji.emojize(":chicken: 2. Hard"))
 
     count = 0
     while count <= 0:
@@ -68,17 +68,29 @@ def select_menu():
             count += 1
         else:
             print("Input is only valid number between 1 and 3 : ")
+            
+def show_text_art(file):
+    """
+    Display text art
+    """
+    file =open(file)
+    get_art = file.read()
+    file.close()
+    return get_art
+
 
 def home(): 
     """
     Shows a landing terminal for users to select an option
     """
+    art = show_text_art("assets/text-art/techquiz.txt")
+    print(art)
     print(emoji.emojize(" :star: Welcome to the Tech Quiz :star: \n"))
     print("This is a study tool for understanding technical knowledge\n")
     print("Please select a number")
-    print(emoji.emojize(":triangular_flag: 1. Start Quiz"))
-    print(emoji.emojize(":pencil:  2. Add own quiz and answers"))
-    print(emoji.emojize(":laptop: 3. Check your score\n"))
+    print(emoji.emojize(":triangular_flag: 1  Start Quiz"))
+    print(emoji.emojize(":pencil:  2  Add own quiz and answers"))
+    print(emoji.emojize(":laptop: 3  Check your score\n"))
     select_menu() 
     
 
@@ -101,7 +113,8 @@ def game_start():
     """
     Game starts and display questions and correct answers
     """  
-    print("Lets's start!\n")
+    art = show_text_art("assets/text-art/start.txt")
+    print(art)
     random_question_num =random.sample(quiz_material,5)
     game_count = 0
     score = 0   
