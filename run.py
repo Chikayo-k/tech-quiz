@@ -78,7 +78,6 @@ def show_text_art(file):
     file.close()
     return get_art
 
-
 def home(): 
     """
     Shows a landing terminal for users to select an option
@@ -121,8 +120,9 @@ def game_start():
     if game_count <= 5:          
         for x in random_question_num:
             game_count += 1
+            print(f"\nQuestion {game_count}\n")
             print(x[0])
-            print("1.True or 2.False? ")
+            print("\n1.True or 2.False?\n")
             # Reference
             # https://stackoverflow.com/questions/59692444/how-do-create-while-loop-input-for-accept-only-1-or-2-as-input-in-python
             user_answer=0
