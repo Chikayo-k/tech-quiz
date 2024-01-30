@@ -8,6 +8,7 @@ import random
 import emoji
 import os
 import time
+from functools import reduce
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -20,12 +21,42 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET =GSPREAD_CLIENT.open("tech_quiz")
 
+score_sheet = SHEET.worksheet("score")
+score_data = score_sheet.get_all_values()			
+
+class ScoreBoard:
+    """
+    Creates an instance of score
+    """    
+    def __init__(self, scores):
+        self.scores = scores
+    
+    def display_latest_five(self):
+        """
+        Get the latest five scores
+        """
+        last_five = self.scores[-5:]
+        # Reference
+        # https://stackoverflow.com/questions/17485747/how-to-convert-a-nested-list-into-a-one-dimensional-list-in-python
+        five_in_list = reduce(lambda x,y: x+y, last_five)
+        counts = 1
+        for num in five_in_list:
+            print(f"{counts}: {num}")
+            counts += 1
+
+
+
 def add_quiz():
     print("Add quiz")
 
 def check_score():
     print("Check score")
+    score = ScoreBoard(score_data)
+    score.display_latest_five()
 
+    
+
+check_score()
 # ------------------------- Game ------------------------------
 # quiz = SHEET.worksheet("easy")
 # data = quiz.get_all_values()
@@ -153,7 +184,6 @@ def game_start():
     art = show_text_art("assets/text-art/score.txt")
     print(art)
     print(emoji.emojize(f":light_bulb: Your score is {score} :light_bulb:\n"))
-    score_sheet = SHEET.worksheet("score")			
     score_sheet.append_row([score])			
     time.sleep(2)
     continue_or_home()
@@ -178,4 +208,4 @@ def continue_or_home():
         os.system("cls") 
         home()
 
-home()
+# home()
