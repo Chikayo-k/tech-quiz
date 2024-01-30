@@ -9,6 +9,8 @@ import emoji
 import os
 import time
 from functools import reduce
+import numpy as np
+import math
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -38,11 +40,23 @@ class ScoreBoard:
         last_five = self.scores[-5:]
         # Reference
         # https://stackoverflow.com/questions/17485747/how-to-convert-a-nested-list-into-a-one-dimensional-list-in-python
+        global five_in_list
         five_in_list = reduce(lambda x,y: x+y, last_five)
         counts = 1
         for num in five_in_list:
             print(f"{counts}: {num}")
             counts += 1
+    
+    def display_average(self):
+        """
+        Display average score calculated by last five scores
+        """  
+        list_int = [eval(num) for num in five_in_list]        
+        sum_scores = sum(list_int)
+        average = sum_scores/5
+        average = math.floor(average)
+        print(f"Your average score calculated by last five scores is {average}")
+        
 
 
 
@@ -53,6 +67,7 @@ def check_score():
     print("Check score")
     score = ScoreBoard(score_data)
     score.display_latest_five()
+    score.display_average()
 
     
 
