@@ -20,9 +20,29 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET =GSPREAD_CLIENT.open("tech_quiz")
 
+def add_quiz():
+    print("Add quiz")
+
+def check_score():
+    print("Check score")
+
+# ------------------------- Game ------------------------------
 # quiz = SHEET.worksheet("easy")
 # data = quiz.get_all_values()
 # print(data)
+def home(): 
+    """
+    Shows a landing terminal for users to select an option
+    """
+    art = show_text_art("assets/text-art/techquiz.txt")
+    print(art)
+    print(emoji.emojize(" :star: Welcome to the Tech Quiz :star: \n"))
+    print("This is a study tool for understanding technical knowledge\n")
+    print("----------  Menu  ----------\n")
+    print(emoji.emojize(":triangular_flag: 1  Start Quiz"))
+    print(emoji.emojize(":pencil:  2  Add own quiz and answers"))
+    print(emoji.emojize(":laptop: 3  Check your score\n"))
+    
 def pick_quiz_mode():
     """
     Give users to select an easy play mode or hard pay mode
@@ -46,13 +66,6 @@ def pick_quiz_mode():
         else:
             print("Input is only valid 1 or 2")
         
-
-def add_quiz():
-    print("Add quiz")
-
-def check_score():
-    print("Check score")
-
 def select_menu():
     """
     menu selection 
@@ -81,21 +94,6 @@ def show_text_art(file):
     file.close()
     return get_art
 
-def home(): 
-    """
-    Shows a landing terminal for users to select an option
-    """
-    art = show_text_art("assets/text-art/techquiz.txt")
-    print(art)
-    print(emoji.emojize(" :star: Welcome to the Tech Quiz :star: \n"))
-    print("This is a study tool for understanding technical knowledge\n")
-    print("----------  Menu  ----------\n")
-    print(emoji.emojize(":triangular_flag: 1  Start Quiz"))
-    print(emoji.emojize(":pencil:  2  Add own quiz and answers"))
-    print(emoji.emojize(":laptop: 3  Check your score\n"))
-    select_menu() 
-    
-
 def get_game_data(game_mode):
     """
     Get quiz and answer from spreadsheet 
@@ -108,8 +106,7 @@ def get_game_data(game_mode):
     else:
         quiz_data = hard_quiz_data.get_all_values() 
     global quiz_material
-    quiz_material = quiz_data
-    game_start()
+    quiz_material = quiz_data 
 
 def game_start():
     """
@@ -175,5 +172,13 @@ def continue_or_home():
     else:
         os.system("cls") 
         home()
-
-home()
+ 
+def game_func():
+    """
+    Main game functions
+    """
+    home()
+    select_menu() 
+    game_start()
+    
+game_func()
