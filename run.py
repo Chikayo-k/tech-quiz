@@ -42,6 +42,7 @@ def home():
     print(emoji.emojize(":triangular_flag: 1  Start Quiz"))
     print(emoji.emojize(":pencil:  2  Add your own quiz and answers"))
     print(emoji.emojize(":laptop: 3  Check your score\n"))
+    select_menu() 
     
 def pick_quiz_mode():
     """
@@ -65,6 +66,7 @@ def pick_quiz_mode():
             count += 1
         else:
             print("Invalid input please select 1 or 2")
+    game_start()
         
 def select_menu():
     """
@@ -151,6 +153,8 @@ def game_start():
     art = show_text_art("assets/text-art/score.txt")
     print(art)
     print(emoji.emojize(f":light_bulb: Your score is {score} :light_bulb:\n"))
+    score_sheet = SHEET.worksheet("score")			
+    score_sheet.append_row([score])			
     time.sleep(2)
     continue_or_home()
     
@@ -173,13 +177,5 @@ def continue_or_home():
     else:
         os.system("cls") 
         home()
- 
-def game_func():
-    """
-    Main game functions
-    """
-    home()
-    select_menu() 
-    game_start()
-    
-game_func()
+
+home()
