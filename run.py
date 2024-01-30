@@ -37,15 +37,15 @@ def home():
     art = show_text_art("assets/text-art/techquiz.txt")
     print(art)
     print(emoji.emojize(" :star: Welcome to the Tech Quiz :star: \n"))
-    print("This is a study tool for understanding technical knowledge\n")
+    print("This is a study tool for learning technical knowledge\n")
     print("----------  Menu  ----------\n")
     print(emoji.emojize(":triangular_flag: 1  Start Quiz"))
-    print(emoji.emojize(":pencil:  2  Add own quiz and answers"))
+    print(emoji.emojize(":pencil:  2  Add your own quiz and answers"))
     print(emoji.emojize(":laptop: 3  Check your score\n"))
     
 def pick_quiz_mode():
     """
-    Give users to select an easy play mode or hard pay mode
+    Difficulty selection
     """
     os.system("cls")
     print("\n----------  Play Mode ----------\n")
@@ -64,7 +64,7 @@ def pick_quiz_mode():
             get_game_data("hard")
             count += 1
         else:
-            print("Input is only valid 1 or 2")
+            print("Invalid input please select 1 or 2")
         
 def select_menu():
     """
@@ -83,7 +83,7 @@ def select_menu():
             check_score()
             count += 1
         else:
-            print("Input is only valid number between 1 and 3 : ")
+            print("Invalid input please select between 1 and 3 : ")
             
 def show_text_art(file):
     """
@@ -96,9 +96,9 @@ def show_text_art(file):
 
 def get_game_data(game_mode):
     """
-    Get quiz and answer from spreadsheet 
+    Get quiz questions and answers from spreadsheet 
     """
-    print(f"Start {game_mode} mode game! \n") 
+    print(f"Start {game_mode} mode! \n") 
     easy_quiz_data =SHEET.worksheet("easy")
     hard_quiz_data =SHEET.worksheet("hard")
     if game_mode == "easy":
@@ -143,8 +143,9 @@ def game_start():
                 os.system("cls")
             else:
                 time.sleep(1)
-                print(emoji.emojize("\n Your answer was wrong :cross_mark:\n"))
-                time.sleep(2)
+                print(emoji.emojize("\n Your answer is wrong :cross_mark:\n"))
+                print(x[2])
+                time.sleep(3)
                 os.system("cls")
     
     art = show_text_art("assets/text-art/score.txt")
@@ -155,7 +156,7 @@ def game_start():
     
 def continue_or_home():
     """
-    User can choose to play again or go back home after completing the game
+    User can choose to play again or go back to the starting page after completing the game
     """
     print("Do you want to play again?\n")
     user_choice=0
