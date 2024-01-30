@@ -4,6 +4,10 @@
 
 import gspread
 from google.oauth2.service_account import Credentials
+import random
+import emoji
+import os
+import time
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -16,19 +20,52 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET =GSPREAD_CLIENT.open("tech_quiz")
 
-# quiz = SHEET.worksheet("easy")
-# data = quiz.get_all_values()
-# print(data)
-
-def start_quiz():
-    print("Start quiz")
-
 def add_quiz():
     print("Add quiz")
 
 def check_score():
     print("Check score")
 
+# ------------------------- Game ------------------------------
+# quiz = SHEET.worksheet("easy")
+# data = quiz.get_all_values()
+# print(data)
+def home(): 
+    """
+    Shows a landing terminal for users to select an option
+    """
+    art = show_text_art("assets/text-art/techquiz.txt")
+    print(art)
+    print(emoji.emojize(" :star: Welcome to the Tech Quiz :star: \n"))
+    print("This is a study tool for learning technical knowledge\n")
+    print("----------  Menu  ----------\n")
+    print(emoji.emojize(":triangular_flag: 1  Start Quiz"))
+    print(emoji.emojize(":pencil:  2  Add your own quiz and answers"))
+    print(emoji.emojize(":laptop: 3  Check your score\n"))
+    
+def pick_quiz_mode():
+    """
+    Difficulty selection
+    """
+    os.system("cls")
+    print("\n----------  Play Mode ----------\n")
+    print("\nWould you like to play EASY mode or HARD mode ? \n")
+    print(emoji.emojize(":hatching_chick: 1. EASY"))
+    print(emoji.emojize(":chicken: 2. Hard\n"))
+
+    count = 0
+    while count <= 0:
+        play_mode = input("Please enter a number 1 or 2 : ")
+
+        if play_mode == "1":
+            get_game_data("easy")
+            count =+ 1
+        elif play_mode == "2":
+            get_game_data("hard")
+            count += 1
+        else:
+            print("Invalid input please select 1 or 2")
+        
 def select_menu():
     """
     menu selection 
@@ -38,7 +75,7 @@ def select_menu():
         num_selection = input("Please enter a number between 1 and 3 : ")           
         if num_selection  == "1":
             count += 1
-            start_quiz()
+            pick_quiz_mode()
         elif num_selection == "2":
             add_quiz()
             count += 1  
@@ -46,22 +83,103 @@ def select_menu():
             check_score()
             count += 1
         else:
-            print("Input is only valid number between 1 and 3")
-           
-
-def home(): 
+            print("Invalid input please select between 1 and 3 : ")
+            
+def show_text_art(file):
     """
-    Shows a landing terminal for users to select an option
+    Display text art
     """
-    print("Welcome to the Tech Quiz\n")
-    print("This is a study tool for understanding technical knowledge\n")
-    print("Please select a number")
-    print("1. Start Quiz")
-    print("2. Add own quiz and answers")
-    print("3, Check your score\n")
-    select_menu()  
-        
-        
+    file =open(file)
+    get_art = file.read()
+    file.close()
+    return get_art
 
+def get_game_data(game_mode):
+    """
+    Get quiz questions and answers from spreadsheet 
+    """
+    print(f"Start {game_mode} mode! \n") 
+    easy_quiz_data =SHEET.worksheet("easy")
+    hard_quiz_data =SHEET.worksheet("hard")
+    if game_mode == "easy":
+        quiz_data = easy_quiz_data.get_all_values()
+    else:
+        quiz_data = hard_quiz_data.get_all_values() 
+    global quiz_material
+    quiz_material = quiz_data 
 
-home()
+def game_start():
+    """
+    Game starts and display questions and correct answers
+    """ 
+    os.system("cls") 
+    art = show_text_art("assets/text-art/start.txt")
+    print(art)
+    random_question_num =random.sample(quiz_material,5)
+    game_count = 0
+    score = 0   
+    if game_count <= 5:          
+        for x in random_question_num:
+            game_count += 1
+            print(f"\nQuestion {game_count}\n")
+            print(x[0])
+            print("\n1.True or 2.False?\n")
+            # Reference
+            # https://stackoverflow.com/questions/59692444/how-do-create-while-loop-input-for-accept-only-1-or-2-as-input-in-python
+            user_answer=0
+            try:
+                while user_answer not in range(1,3):
+                    user_answer = int(input("Please enter a number 1 or 2 : \n"))
+            except:
+                print("Please enter a number 1 or 2 : \n")
+                user_answer = int(input("Pleas Enter a number\n"))
+            
+            correct_answer = int(x[1])   
+            if user_answer == correct_answer:
+                time.sleep(1)
+                print(emoji.emojize("\n Your answer is correct! :check_mark_button: \n"))
+                time.sleep(2)
+                score += 20
+                os.system("cls")
+            else:
+                time.sleep(1)
+                print(emoji.emojize("\n Your answer is wrong :cross_mark:\n"))
+                print(x[2])
+                time.sleep(3)
+                os.system("cls")
+    
+    art = show_text_art("assets/text-art/score.txt")
+    print(art)
+    print(emoji.emojize(f":light_bulb: Your score is {score} :light_bulb:\n"))
+    time.sleep(2)
+    continue_or_home()
+    
+def continue_or_home():
+    """
+    User can choose to play again or go back to the starting page after completing the game
+    """
+    print("Do you want to play again?\n")
+    user_choice=0
+    
+    try:
+        while user_choice not in range(1,3):
+            user_choice = int(input("1. Yes 2. No\n"))
+    except:
+        print("Please enter a number 1 or 2 : \n")
+        user_choice = int(input("1. Yes 2. No\n"))
+        
+    if user_choice == 1:
+        game_start()
+    else:
+        os.system("cls") 
+        home()
+ 
+def game_func():
+    """
+    Main game functions
+    """
+    home()
+    select_menu() 
+    game_start()
+    
+game_func()
