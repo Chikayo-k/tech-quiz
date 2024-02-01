@@ -24,7 +24,16 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET =GSPREAD_CLIENT.open("tech_quiz")
 
 score_sheet = SHEET.worksheet("score")
-score_data = score_sheet.get_all_values()			
+score_data = score_sheet.get_all_values()	
+
+def show_text_art(file):
+    """
+    Display text art
+    """
+    file =open(file)
+    get_art = file.read()
+    file.close()
+    return get_art		
 
 class ScoreBoard:
     """
@@ -55,16 +64,14 @@ class ScoreBoard:
         sum_scores = sum(list_int)
         average = sum_scores/5
         average = math.floor(average)
-        print(f"Your average score calculated by last five scores is {average}")
+        print(f"\nYour average score calculated by last five scores is\n {average}")
         
-
-
-
 def add_quiz():
     print("Add quiz")
 
 def check_score():
-    print("Check score")
+    art = show_text_art("assets/text-art/score.txt")
+    print(art)
     score = ScoreBoard(score_data)
     score.display_latest_five()
     score.display_average()
@@ -133,15 +140,6 @@ def select_menu():
         else:
             print("Invalid input please select between 1 and 3 : ")
             
-def show_text_art(file):
-    """
-    Display text art
-    """
-    file =open(file)
-    get_art = file.read()
-    file.close()
-    return get_art
-
 def get_game_data(game_mode):
     """
     Get quiz questions and answers from spreadsheet 
