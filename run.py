@@ -64,21 +64,21 @@ class ScoreBoard:
         sum_scores = sum(list_int)
         average = sum_scores/5
         average = math.floor(average)
-        print(f"\nYour average score calculated by last five scores is\n {average}")
+        print(f"\nYour average score calculated by last five scores is\n\n{average}")
         
 def add_quiz():
     print("Add quiz")
 
 def check_score():
+    os.system("cls") 
     art = show_text_art("assets/text-art/score.txt")
     print(art)
+    print("-----------------------------------\n")
     score = ScoreBoard(score_data)
     score.display_latest_five()
     score.display_average()
 
     
-
-check_score()
 # ------------------------- Game ------------------------------
 # quiz = SHEET.worksheet("easy")
 # data = quiz.get_all_values()
@@ -221,4 +221,5 @@ def continue_or_home():
         os.system("cls") 
         home()
 
-# home()
+home()
+check_score()
