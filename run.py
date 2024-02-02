@@ -66,19 +66,32 @@ class ScoreBoard:
         average = math.floor(average)
         print(f"\nYour average score calculated by last five scores is\n\n{average}")
         
-def add_quiz():
+def ask_add_question():
     os.system("cls") 
     print("Add quiz")    
-    def ask_add_question():
-        global enter_question    
-        global enter_answer 
-        global enter_description 
-        enter_question = input("Please enter a question here")
-        enter_answer = input("Type 1.TRUE or 2.FALSE for the answer")
-        enter_description = input("Add description of the question")
-    ask_add_question()
+    global enter_question    
+    global enter_answer 
+    global enter_description 
+    enter_question = input("Please enter a question here")
+    enter_answer = input("Type 1.TRUE or 2.FALSE for the answer")
+    enter_description = input("Add description of the question")
+        
+class AddQuiz:
 
-add_quiz()
+    def __init__(self,enter_question,enter_answer,enter_description):
+        """
+        Creates an instance of score
+        """   
+        self.question = enter_question
+        self.answer = enter_answer
+        self.description = enter_description
+    
+    def user_input_quiz(self):
+        return f"Question: {self.question}, Answer:{self.answer}, description:{self.description}"
+
+
+
+
 
 def check_score():
     os.system("cls") 
@@ -234,3 +247,6 @@ def continue_or_home():
 
 # home()
 # check_score()
+ask_add_question()
+question = Add_quiz(enter_question,enter_answer,enter_description)
+print(question.user_input_quiz())
