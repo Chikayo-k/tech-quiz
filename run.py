@@ -8,6 +8,9 @@ import random
 import emoji
 import os
 import time
+from functools import reduce
+import numpy as np
+import math
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -20,12 +23,62 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET =GSPREAD_CLIENT.open("tech_quiz")
 
+score_sheet = SHEET.worksheet("score")
+score_data = score_sheet.get_all_values()	
+
+def show_text_art(file):
+    """
+    Display text art
+    """
+    file =open(file)
+    get_art = file.read()
+    file.close()
+    return get_art		
+
+class ScoreBoard:
+    """
+    Creates an instance of score
+    """    
+    def __init__(self, scores):
+        self.scores = scores
+    
+    def display_latest_five(self):
+        """
+        Get the latest five scores
+        """
+        last_five = self.scores[-5:]
+        # Reference
+        # https://stackoverflow.com/questions/17485747/how-to-convert-a-nested-list-into-a-one-dimensional-list-in-python
+        global five_in_list
+        five_in_list = reduce(lambda x,y: x+y, last_five)
+        counts = 1
+        for num in five_in_list:
+            print(f"{counts}: {num}")
+            counts += 1
+    
+    def display_average(self):
+        """
+        Display average score calculated by last five scores
+        """  
+        list_int = [eval(num) for num in five_in_list]        
+        sum_scores = sum(list_int)
+        average = sum_scores/5
+        average = math.floor(average)
+        print(f"\nYour average score calculated by last five scores is\n\n{average}")
+        
 def add_quiz():
     print("Add quiz")
 
 def check_score():
-    print("Check score")
+    os.system("cls") 
+    art = show_text_art("assets/text-art/score.txt")
+    print(art)
+    print("-----------------------------------\n")
+    score = ScoreBoard(score_data)
+    score.display_latest_five()
+    score.display_average()
 
+    
 # ------------------------- Game ------------------------------
 # quiz = SHEET.worksheet("easy")
 # data = quiz.get_all_values()
@@ -42,6 +95,7 @@ def home():
     print(emoji.emojize(":triangular_flag: 1  Start Quiz"))
     print(emoji.emojize(":pencil:  2  Add your own quiz and answers"))
     print(emoji.emojize(":laptop: 3  Check your score\n"))
+    select_menu() 
     
 def pick_quiz_mode():
     """
@@ -65,6 +119,7 @@ def pick_quiz_mode():
             count += 1
         else:
             print("Invalid input please select 1 or 2")
+    game_start()
         
 def select_menu():
     """
@@ -85,15 +140,6 @@ def select_menu():
         else:
             print("Invalid input please select between 1 and 3 : ")
             
-def show_text_art(file):
-    """
-    Display text art
-    """
-    file =open(file)
-    get_art = file.read()
-    file.close()
-    return get_art
-
 def get_game_data(game_mode):
     """
     Get quiz questions and answers from spreadsheet 
@@ -151,6 +197,7 @@ def game_start():
     art = show_text_art("assets/text-art/score.txt")
     print(art)
     print(emoji.emojize(f":light_bulb: Your score is {score} :light_bulb:\n"))
+    score_sheet.append_row([score])			
     time.sleep(2)
     continue_or_home()
     
@@ -173,13 +220,6 @@ def continue_or_home():
     else:
         os.system("cls") 
         home()
- 
-def game_func():
-    """
-    Main game functions
-    """
-    home()
-    select_menu() 
-    game_start()
-    
-game_func()
+
+home()
+check_score()
