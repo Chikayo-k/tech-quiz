@@ -159,7 +159,7 @@ def select_menu():
             count += 1
             pick_quiz_mode()
         elif num_selection == "2":
-            add_quiz()
+            ask_add_question()
             count += 1  
         elif num_selection == "3":
             check_score()
