@@ -251,5 +251,5 @@ def continue_or_home():
 # home()
 # check_score()
 ask_add_question()
-question = Add_quiz(enter_question,enter_answer,enter_description)
+question = AddQuiz(enter_question,enter_answer,enter_description)
 print(question.user_input_quiz())
