@@ -67,7 +67,18 @@ class ScoreBoard:
         print(f"\nYour average score calculated by last five scores is\n\n{average}")
         
 def add_quiz():
-    print("Add quiz")
+    os.system("cls") 
+    print("Add quiz")    
+    def ask_add_question():
+        global enter_question    
+        global enter_answer 
+        global enter_description 
+        enter_question = input("Please enter a question here")
+        enter_answer = input("Type 1.TRUE or 2.FALSE for the answer")
+        enter_description = input("Add description of the question")
+    ask_add_question()
+
+add_quiz()
 
 def check_score():
     os.system("cls") 
@@ -221,5 +232,5 @@ def continue_or_home():
         os.system("cls") 
         home()
 
-home()
-check_score()
+# home()
+# check_score()
