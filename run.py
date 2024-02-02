@@ -91,9 +91,30 @@ class AddQuiz:
         Display quiz that user input 
         """
         return f"Question: {self.question}, Answer:{self.answer}, description:{self.description}"
+    
+class ToSpreadsheet(AddQuiz):
+    
+    def __init__(self,enter_question,enter_answer,enter_description,mood):
+        """
+        Creates instance of ToSpreadSheet
+        """
+        super().__init__(enter_question,enter_answer,enter_description)
+        self.mood = mood
+    
+    def add_to_spreadsheet(self):
+        """
+        Add the quiz to the google spread sheet
+        """
+        score_sheet = SHEET.worksheet(self.mood)           
+        score_sheet.append_row([self.question,self.answer,self.description])            
 
+ask_add_question()
+question = AddQuiz(enter_question,enter_answer,enter_description)
+print(question.user_input_quiz())
+# question.add_to_spreadsheet()
 
-
+spreadsheet = ToSpreadsheet(enter_question,enter_answer,enter_description,"easy")
+spreadsheet.add_to_spreadsheet()
 
 
 def check_score():
@@ -250,6 +271,3 @@ def continue_or_home():
 
 # home()
 # check_score()
-ask_add_question()
-question = AddQuiz(enter_question,enter_answer,enter_description)
-print(question.user_input_quiz())
