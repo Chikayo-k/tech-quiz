@@ -87,6 +87,9 @@ class AddQuiz:
         self.description = enter_description
     
     def user_input_quiz(self):
+        """
+        Display quiz that user input 
+        """
         return f"Question: {self.question}, Answer:{self.answer}, description:{self.description}"
 
 
