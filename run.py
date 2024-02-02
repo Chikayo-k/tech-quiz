@@ -72,6 +72,22 @@ def ask_add_question():
     global enter_question    
     global enter_answer 
     global enter_description 
+    global mode
+
+    mode_choice = input("1. Easy or 2. Hard\n")
+    
+    count = 0
+    while count == 0:
+        if mode_choice == "1":
+            mode ="easy"
+            count += 1
+        elif mode_choice =="2":
+            mode ="hard"
+            count += 1
+        else:
+            print("Please input only 1 or 2")
+            mode_choice = input("1. Easy or 2. Hard\n")
+        
     enter_question = input("Please enter a question here")
     enter_answer = input("Type 1.TRUE or 2.FALSE for the answer")
     enter_description = input("Add description of the question")
@@ -94,18 +110,18 @@ class AddQuiz:
     
 class ToSpreadsheet(AddQuiz):
     
-    def __init__(self,enter_question,enter_answer,enter_description,mood):
+    def __init__(self,enter_question,enter_answer,enter_description,mode):
         """
         Creates instance of ToSpreadSheet
         """
         super().__init__(enter_question,enter_answer,enter_description)
-        self.mood = mood
+        self.mode = mode
     
     def add_to_spreadsheet(self):
         """
         Add the quiz to the google spread sheet
         """
-        score_sheet = SHEET.worksheet(self.mood)           
+        score_sheet = SHEET.worksheet(self.mode)           
         score_sheet.append_row([self.question,self.answer,self.description])            
 
 ask_add_question()
@@ -113,7 +129,7 @@ question = AddQuiz(enter_question,enter_answer,enter_description)
 print(question.user_input_quiz())
 # question.add_to_spreadsheet()
 
-spreadsheet = ToSpreadsheet(enter_question,enter_answer,enter_description,"easy")
+spreadsheet = ToSpreadsheet(enter_question,enter_answer,enter_description,mode)
 spreadsheet.add_to_spreadsheet()
 
 
