@@ -109,20 +109,29 @@ def ask_add_question():
         print("Pick 1.TRUE or 2.FALSE for the answer\n")
         enter_answer = input("Enter a number here\n")
         if enter_answer == "1":
+            time.sleep(1)
+            print("Success!")
+            time.sleep(1)
             answer_count +=1
         elif enter_answer == "2":
+            time.sleep(1)
+            print("Success!")
+            time.sleep(1)
             answer_count +=1
         else:
             time.sleep(1)
             print("Please enter a number between 1 and 2\n")
-            time.sleep(2)
-            os.system("cls")          
+            time.sleep(1)
+            os.system("cls")  
+                   
 
     # ask to add description for the question
     os.system("cls")    
     enter_description = input("Add description of the question\n")
+    time.sleep(1)
     print("Success!")
     time.sleep(1)
+    os.system("cls") 
     
 class AddQuiz:
 
