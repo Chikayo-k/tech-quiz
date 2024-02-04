@@ -78,13 +78,16 @@ def ask_add_question():
     count = 0
     while count == 0:
         print("Choose a quiz mode")
-        mode_choice = input("1. Easy or 2. Hard\n")
+        mode_choice = input("1. Easy or 2. Hard 3.Home\n")
         if mode_choice == "1":
             mode ="easy"
             count += 1
         elif mode_choice =="2":
             mode ="hard"
             count += 1
+        elif mode_choice =="3":
+            os.system("cls")
+            home()
         else:
             time.sleep(1)
             print("Please enter a number between 1 or 2\n")
