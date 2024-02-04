@@ -1,5 +1,3 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 import gspread
@@ -11,7 +9,6 @@ import time
 from functools import reduce
 import numpy as np
 import math
-
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -100,7 +97,6 @@ def ask_add_question():
             time.sleep(2)
             os.system("clear")
     
-    
     # ask to add a new question
     os.system("clear")     
     enter_question = input("Please enter a question here\n")
@@ -130,7 +126,6 @@ def ask_add_question():
             time.sleep(1)
             os.system("clear")  
             
-
     # ask to add description for the question
     os.system("clear")    
     enter_description = input("Add description of the question\n")
@@ -208,8 +203,7 @@ def ask_more_question():
             home()
             count += 1
         else:
-            print("Please Enter a number 1 or 2")           
-    
+            print("Please Enter a number 1 or 2")             
             
 def add_question():
     question = AddQuiz(enter_question,enter_answer,enter_description)
@@ -219,8 +213,6 @@ def add_question():
     spreadsheet.add_to_spreadsheet()
     ask_more_question()
     
-
-
 def check_score():
     os.system("clear") 
     art = show_text_art("assets/text-art/score.txt")
@@ -229,7 +221,6 @@ def check_score():
     score = ScoreBoard(score_data)
     score.display_latest_five()
     score.display_average()
-
     
 # ------------------------- Game ------------------------------
 def home(): 
@@ -370,6 +361,5 @@ def continue_or_home():
     else:
         os.system("clear") 
         home()
-
+        
 home()
-# check_score()
