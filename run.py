@@ -68,7 +68,9 @@ class ScoreBoard:
         
 def ask_add_question():
     os.system("cls") 
-    print("Add quiz")    
+    print("Add quiz")
+    art = show_text_art("assets/text-art/add-quiz.txt")
+    print(art)    
     global enter_question    
     global enter_answer 
     global enter_description 
@@ -78,7 +80,7 @@ def ask_add_question():
     count = 0
     while count == 0:
         print("Choose a quiz mode")
-        mode_choice = input("1. Easy or 2. Hard 3.Home\n")
+        mode_choice = input("1. Easy or 2. Hard 3. Home\n")
         if mode_choice == "1":
             mode ="easy"
             count += 1
@@ -148,7 +150,7 @@ class AddQuiz:
         Display quiz that user input 
         """
         time.sleep(1)
-        return f"\nQuestion: {self.question}, Answer:{self.answer}, description:{self.description}"
+        return f"Question: {self.question}, Answer:{self.answer}, description:{self.description}\n"
             
 class ToSpreadsheet(AddQuiz):
     
@@ -172,10 +174,11 @@ def confirmation_add_quiz():
     """        
     count=0
     while count == 0:
-        print("Are you ok to add this question ?")  
+        print("Are you ok to add this question ?\n")  
         print("1.Yes 2.No")
-        answer = input("Please enter a number here")
+        answer = input("Please enter a number here\n")
         if answer == "1":
+            time.sleep(1)
             print("Your question is added!!")
             count =+ 1
         elif answer == "2":
@@ -189,6 +192,7 @@ def ask_more_question():
     """
     count = 0    
     while count == 0:
+        os.system("cls") 
         print("Do you want to add more quiz ?")
         answer = input("1.Yes 2.Home")
         if answer == "1":
@@ -196,6 +200,7 @@ def ask_more_question():
             count += 1
             add_question()
         elif answer == "2":
+            os.system("cls") 
             home()
             count += 1
         else:
