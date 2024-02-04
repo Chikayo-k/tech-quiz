@@ -152,11 +152,29 @@ class ToSpreadsheet(AddQuiz):
         Add the quiz to the google spread sheet
         """
         score_sheet = SHEET.worksheet(self.mode)           
-        score_sheet.append_row([self.question,self.answer,self.description])            
+        score_sheet.append_row([self.question,self.answer,self.description])
 
+def confirmation_add_quiz():
+    """
+    Ask users if they want to add a new quiz they made
+    """        
+    count=0
+    while count == 0:
+        print("Are you ok to add this question ?")  
+        print("1.Yes 2.No")
+        answer = input("Please enter a number here")
+        if answer == "1":
+            print("Your question is added!!")
+            count =+ 1
+        elif answer == "2":
+            ask_add_question()
+        else:
+            print("Please Enter a number 1 or 2")
+            
 def add_question():
     question = AddQuiz(enter_question,enter_answer,enter_description)
-    print(question.user_input_quiz())    
+    print(question.user_input_quiz())
+    confirmation_add_quiz()
     spreadsheet = ToSpreadsheet(enter_question,enter_answer,enter_description,mode)
     spreadsheet.add_to_spreadsheet()
 
@@ -172,9 +190,6 @@ def check_score():
 
     
 # ------------------------- Game ------------------------------
-# quiz = SHEET.worksheet("easy")
-# data = quiz.get_all_values()
-# print(data)
 def home(): 
     """
     Shows a landing terminal for users to select an option
