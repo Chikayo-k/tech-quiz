@@ -124,13 +124,11 @@ class ToSpreadsheet(AddQuiz):
         score_sheet = SHEET.worksheet(self.mode)           
         score_sheet.append_row([self.question,self.answer,self.description])            
 
-ask_add_question()
-question = AddQuiz(enter_question,enter_answer,enter_description)
-print(question.user_input_quiz())
-# question.add_to_spreadsheet()
-
-spreadsheet = ToSpreadsheet(enter_question,enter_answer,enter_description,mode)
-spreadsheet.add_to_spreadsheet()
+def add_question():
+    question = AddQuiz(enter_question,enter_answer,enter_description)
+    print(question.user_input_quiz())
+    spreadsheet = ToSpreadsheet(enter_question,enter_answer,enter_description,mode)
+    spreadsheet.add_to_spreadsheet()
 
 
 def check_score():
@@ -197,6 +195,7 @@ def select_menu():
             pick_quiz_mode()
         elif num_selection == "2":
             ask_add_question()
+            add_question()
             count += 1  
         elif num_selection == "3":
             check_score()
@@ -285,5 +284,5 @@ def continue_or_home():
         os.system("cls") 
         home()
 
-# home()
+home()
 # check_score()
