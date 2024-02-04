@@ -12,6 +12,7 @@ from functools import reduce
 import numpy as np
 import math
 
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -70,7 +71,7 @@ def ask_add_question():
     """
     Users can create a new quiz
     """
-    os.system("cls") 
+    os.system("clear") 
     print("Add quiz")
     art = show_text_art("assets/text-art/add-quiz.txt")
     print(art)    
@@ -91,22 +92,22 @@ def ask_add_question():
             mode ="hard"
             count += 1
         elif mode_choice =="3":
-            os.system("cls")
+            os.system("clear")
             home()
         else:
             time.sleep(1)
             print("Please enter a number between 1 or 2\n")
             time.sleep(2)
-            os.system("cls")
+            os.system("clear")
     
     
     # ask to add a new question
-    os.system("cls")     
+    os.system("clear")     
     enter_question = input("Please enter a question here\n")
     time.sleep(1)
     print("Success!")
     time.sleep(1)
-    os.system("cls")
+    os.system("clear")
     
     # ask to add an answer to the question
     answer_count =0
@@ -127,16 +128,16 @@ def ask_add_question():
             time.sleep(1)
             print("Please enter a number between 1 and 2\n")
             time.sleep(1)
-            os.system("cls")  
+            os.system("clear")  
             
 
     # ask to add description for the question
-    os.system("cls")    
+    os.system("clear")    
     enter_description = input("Add description of the question\n")
     time.sleep(1)
     print("Success!")
     time.sleep(1)
-    os.system("cls") 
+    os.system("clear") 
     
 class AddQuiz:
 
@@ -195,7 +196,7 @@ def ask_more_question():
     """
     count = 0    
     while count == 0:
-        os.system("cls") 
+        os.system("clear") 
         print("Do you want to add more quiz ?")
         answer = input("1.Yes 2.Home\n")
         if answer == "1":
@@ -203,7 +204,7 @@ def ask_more_question():
             count += 1
             add_question()
         elif answer == "2":
-            os.system("cls") 
+            os.system("clear") 
             home()
             count += 1
         else:
@@ -221,7 +222,7 @@ def add_question():
 
 
 def check_score():
-    os.system("cls") 
+    os.system("clear") 
     art = show_text_art("assets/text-art/score.txt")
     print(art)
     print("-----------------------------------\n")
@@ -249,7 +250,7 @@ def pick_quiz_mode():
     """
     Difficulty selection
     """
-    os.system("cls")
+    os.system("clear")
     print("\n----------  Play Mode ----------\n")
     print("\nWould you like to play EASY mode or HARD mode ? \n")
     print(emoji.emojize(":hatching_chick: 1. EASY"))
@@ -307,7 +308,7 @@ def game_start():
     """
     Game starts and display questions and correct answers
     """ 
-    os.system("cls") 
+    os.system("clear") 
     art = show_text_art("assets/text-art/start.txt")
     print(art)
     random_question_num =random.sample(quiz_material,5)
@@ -335,13 +336,13 @@ def game_start():
                 print(emoji.emojize("\n Your answer is correct! :check_mark_button: \n"))
                 time.sleep(2)
                 score += 20
-                os.system("cls")
+                os.system("clear")
             else:
                 time.sleep(1)
                 print(emoji.emojize("\n Your answer is wrong :cross_mark:\n"))
                 print(x[2])
                 time.sleep(3)
-                os.system("cls")
+                os.system("clear")
     
     art = show_text_art("assets/text-art/score.txt")
     print(art)
@@ -367,7 +368,7 @@ def continue_or_home():
     if user_choice == 1:
         game_start()
     else:
-        os.system("cls") 
+        os.system("clear") 
         home()
 
 home()
