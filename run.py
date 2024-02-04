@@ -197,7 +197,7 @@ def ask_more_question():
     while count == 0:
         os.system("cls") 
         print("Do you want to add more quiz ?")
-        answer = input("1.Yes 2.Home")
+        answer = input("1.Yes 2.Home\n")
         if answer == "1":
             ask_add_question()
             count += 1
@@ -257,7 +257,7 @@ def pick_quiz_mode():
 
     count = 0
     while count <= 0:
-        play_mode = input("Please enter a number 1 or 2 : ")
+        play_mode = input("Please enter a number 1 or 2 :\n")
 
         if play_mode == "1":
             get_game_data("easy")
@@ -266,7 +266,7 @@ def pick_quiz_mode():
             get_game_data("hard")
             count += 1
         else:
-            print("Invalid input please select 1 or 2")
+            print("Invalid input please select 1 or 2\n")
     game_start()
         
 def select_menu():
@@ -275,7 +275,7 @@ def select_menu():
     """
     count = 0
     while count <= 0:
-        num_selection = input("Please enter a number between 1 and 3 : ")           
+        num_selection = input("Please enter a number between 1 and 3 :\n")           
         if num_selection  == "1":
             count += 1
             pick_quiz_mode()
