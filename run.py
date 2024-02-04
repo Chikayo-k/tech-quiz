@@ -66,8 +66,159 @@ class ScoreBoard:
         average = math.floor(average)
         print(f"\nYour average score calculated by last five scores is\n\n{average}")
         
-def add_quiz():
+def ask_add_question():
+    """
+    Users can create a new quiz
+    """
+    os.system("cls") 
     print("Add quiz")
+    art = show_text_art("assets/text-art/add-quiz.txt")
+    print(art)    
+    global enter_question    
+    global enter_answer 
+    global enter_description 
+    global mode
+    
+    # Ask user to pick easy mode or hard mode to add a question
+    count = 0
+    while count == 0:
+        print("Choose a quiz mode")
+        mode_choice = input("1. Easy or 2. Hard 3. Home\n")
+        if mode_choice == "1":
+            mode ="easy"
+            count += 1
+        elif mode_choice =="2":
+            mode ="hard"
+            count += 1
+        elif mode_choice =="3":
+            os.system("cls")
+            home()
+        else:
+            time.sleep(1)
+            print("Please enter a number between 1 or 2\n")
+            time.sleep(2)
+            os.system("cls")
+    
+    
+    # ask to add a new question
+    os.system("cls")     
+    enter_question = input("Please enter a question here\n")
+    time.sleep(1)
+    print("Success!")
+    time.sleep(1)
+    os.system("cls")
+    
+    # ask to add an answer to the question
+    answer_count =0
+    while answer_count == 0:
+        print("Pick 1.TRUE or 2.FALSE for the answer\n")
+        enter_answer = input("Enter a number here\n")
+        if enter_answer == "1":
+            time.sleep(1)
+            print("Success!")
+            time.sleep(1)
+            answer_count +=1
+        elif enter_answer == "2":
+            time.sleep(1)
+            print("Success!")
+            time.sleep(1)
+            answer_count +=1
+        else:
+            time.sleep(1)
+            print("Please enter a number between 1 and 2\n")
+            time.sleep(1)
+            os.system("cls")  
+            
+
+    # ask to add description for the question
+    os.system("cls")    
+    enter_description = input("Add description of the question\n")
+    time.sleep(1)
+    print("Success!")
+    time.sleep(1)
+    os.system("cls") 
+    
+class AddQuiz:
+
+    def __init__(self,enter_question,enter_answer,enter_description):
+        """
+        Creates an instance of score
+        """   
+        self.question = enter_question
+        self.answer = enter_answer
+        self.description = enter_description
+    
+    def user_input_quiz(self):
+        """
+        Display quiz that user input 
+        """
+        time.sleep(1)
+        return f"Question: {self.question}, Answer:{self.answer}, description:{self.description}\n"
+            
+class ToSpreadsheet(AddQuiz):
+    
+    def __init__(self,enter_question,enter_answer,enter_description,mode):
+        """
+        Creates instance of ToSpreadSheet
+        """
+        super().__init__(enter_question,enter_answer,enter_description)
+        self.mode = mode
+    
+    def add_to_spreadsheet(self):
+        """
+        Add the quiz to the google spread sheet
+        """
+        score_sheet = SHEET.worksheet(self.mode)           
+        score_sheet.append_row([self.question,self.answer,self.description])
+
+def confirmation_add_quiz():
+    """
+    Ask users if they want to add a new quiz they made
+    """        
+    count=0
+    while count == 0:
+        print("Are you ok to add this question ?\n")  
+        print("1.Yes 2.No")
+        answer = input("Please enter a number here\n")
+        if answer == "1":
+            time.sleep(1)
+            print("Your question is added!!")
+            count =+ 1
+        elif answer == "2":
+            ask_add_question()
+        else:
+            print("Please Enter a number 1 or 2")
+
+def ask_more_question():
+    """
+    Ask users if there is more questions to add
+    """
+    count = 0    
+    while count == 0:
+        os.system("cls") 
+        print("Do you want to add more quiz ?")
+        answer = input("1.Yes 2.Home")
+        if answer == "1":
+            ask_add_question()
+            count += 1
+            add_question()
+        elif answer == "2":
+            os.system("cls") 
+            home()
+            count += 1
+        else:
+            print("Please Enter a number 1 or 2")           
+    
+            
+def add_question():
+    question = AddQuiz(enter_question,enter_answer,enter_description)
+    print(question.user_input_quiz())
+    confirmation_add_quiz()
+    spreadsheet = ToSpreadsheet(enter_question,enter_answer,enter_description,mode)
+    spreadsheet.add_to_spreadsheet()
+    ask_more_question()
+    
+
 
 def check_score():
     os.system("cls") 
@@ -80,9 +231,6 @@ def check_score():
 
     
 # ------------------------- Game ------------------------------
-# quiz = SHEET.worksheet("easy")
-# data = quiz.get_all_values()
-# print(data)
 def home(): 
     """
     Shows a landing terminal for users to select an option
@@ -132,7 +280,8 @@ def select_menu():
             count += 1
             pick_quiz_mode()
         elif num_selection == "2":
-            add_quiz()
+            ask_add_question()
+            add_question()
             count += 1  
         elif num_selection == "3":
             check_score()
@@ -222,4 +371,4 @@ def continue_or_home():
         home()
 
 home()
-check_score()
+# check_score()
