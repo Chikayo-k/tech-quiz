@@ -241,9 +241,9 @@ def home():
     print(emoji.emojize(" :star: Welcome to the Tech Quiz :star: \n"))
     print("This is a study tool for learning technical knowledge\n")
     print("----------  Menu  ----------\n")
-    print(emoji.emojize(":triangular_flag: 1  Start Quiz"))
-    print(emoji.emojize(":pencil:  2  Add your own quiz and answers"))
-    print(emoji.emojize(":laptop: 3  Check your score\n"))
+    print(emoji.emojize(":triangular_flag: ---- 1  Start Quiz"))
+    print(emoji.emojize(":pencil:  ---- 2  Add your own quiz and answers"))
+    print(emoji.emojize(":laptop: ---- 3  Check your score\n"))
     select_menu() 
     
 def pick_quiz_mode():
