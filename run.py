@@ -67,6 +67,9 @@ class ScoreBoard:
         print(f"\nYour average score calculated by last five scores is\n\n{average}")
         
 def ask_add_question():
+    """
+    Users can create a new quiz
+    """
     os.system("cls") 
     print("Add quiz")
     art = show_text_art("assets/text-art/add-quiz.txt")
