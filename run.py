@@ -123,7 +123,7 @@ def ask_add_question():
             print("Please enter a number between 1 and 2\n")
             time.sleep(1)
             os.system("cls")  
-                   
+            
 
     # ask to add description for the question
     os.system("cls")    
@@ -182,6 +182,25 @@ def confirmation_add_quiz():
             ask_add_question()
         else:
             print("Please Enter a number 1 or 2")
+
+def ask_more_question():
+    """
+    Ask users if there is more questions to add
+    """
+    count = 0    
+    while count == 0:
+        print("Do you want to add more quiz ?")
+        answer = input("1.Yes 2.Home")
+        if answer == "1":
+            ask_add_question()
+            count += 1
+            add_question()
+        elif answer == "2":
+            home()
+            count += 1
+        else:
+            print("Please Enter a number 1 or 2")           
+    
             
 def add_question():
     question = AddQuiz(enter_question,enter_answer,enter_description)
@@ -189,6 +208,8 @@ def add_question():
     confirmation_add_quiz()
     spreadsheet = ToSpreadsheet(enter_question,enter_answer,enter_description,mode)
     spreadsheet.add_to_spreadsheet()
+    ask_more_question()
+    
 
 
 def check_score():
