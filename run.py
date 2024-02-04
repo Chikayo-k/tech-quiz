@@ -89,7 +89,18 @@ def ask_add_question():
             mode_choice = input("1. Easy or 2. Hard\n")
         
     enter_question = input("Please enter a question here")
-    enter_answer = input("Type 1.TRUE or 2.FALSE for the answer")
+        
+    answer_count =0
+    while answer_count == 0:
+        print("1.TRUE or 2.FALSE for the answer\n")
+        enter_answer = input("Enter a number here\n")
+        if enter_answer == "1":
+            answer_count +=1
+        elif enter_answer == "2":
+            answer_count +=1
+        else:
+            print("Please enter a number between number 1 and 2\n")
+        
     enter_description = input("Add description of the question")
         
 class AddQuiz:
