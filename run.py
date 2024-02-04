@@ -221,12 +221,15 @@ def check_score():
     score = ScoreBoard(score_data)
     score.display_latest_five()
     score.display_average()
+    input("\nEnter to home\n")
+    home()
     
 # ------------------------- Game ------------------------------
 def home(): 
     """
     Shows a landing terminal for users to select an option
     """
+    os.system("clear") 
     art = show_text_art("assets/text-art/techquiz.txt")
     print(art)
     print(emoji.emojize(" :star: Welcome to the Tech Quiz :star: \n"))
