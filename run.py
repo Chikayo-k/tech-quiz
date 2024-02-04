@@ -77,6 +77,7 @@ def ask_add_question():
     # Ask user to pick easy mode or hard mode to add a question
     count = 0
     while count == 0:
+        print("Choose a quiz mode")
         mode_choice = input("1. Easy or 2. Hard\n")
         if mode_choice == "1":
             mode ="easy"
@@ -85,26 +86,41 @@ def ask_add_question():
             mode ="hard"
             count += 1
         else:
-            print("Please input only 1 or 2\n")
+            time.sleep(1)
+            print("Please enter a number between 1 or 2\n")
+            time.sleep(2)
+            os.system("cls")
     
-    # ask to add a new question     
+    
+    # ask to add a new question
+    os.system("cls")     
     enter_question = input("Please enter a question here\n")
+    time.sleep(1)
+    print("Success!")
+    time.sleep(1)
+    os.system("cls")
     
-    # ask to add an answer to the question    
+    # ask to add an answer to the question
     answer_count =0
     while answer_count == 0:
-        print("1.TRUE or 2.FALSE for the answer\n")
+        print("Pick 1.TRUE or 2.FALSE for the answer\n")
         enter_answer = input("Enter a number here\n")
         if enter_answer == "1":
             answer_count +=1
         elif enter_answer == "2":
             answer_count +=1
         else:
-            print("Please enter a number between number 1 and 2\n")
-    
-    # ask to add description for the question    
+            time.sleep(1)
+            print("Please enter a number between 1 and 2\n")
+            time.sleep(2)
+            os.system("cls")          
+
+    # ask to add description for the question
+    os.system("cls")    
     enter_description = input("Add description of the question\n")
-        
+    print("Success!")
+    time.sleep(1)
+    
 class AddQuiz:
 
     def __init__(self,enter_question,enter_answer,enter_description):
@@ -119,8 +135,9 @@ class AddQuiz:
         """
         Display quiz that user input 
         """
-        return f"Question: {self.question}, Answer:{self.answer}, description:{self.description}"
-    
+        time.sleep(1)
+        return f"\nQuestion: {self.question}, Answer:{self.answer}, description:{self.description}"
+            
 class ToSpreadsheet(AddQuiz):
     
     def __init__(self,enter_question,enter_answer,enter_description,mode):
@@ -139,7 +156,7 @@ class ToSpreadsheet(AddQuiz):
 
 def add_question():
     question = AddQuiz(enter_question,enter_answer,enter_description)
-    print(question.user_input_quiz())
+    print(question.user_input_quiz())    
     spreadsheet = ToSpreadsheet(enter_question,enter_answer,enter_description,mode)
     spreadsheet.add_to_spreadsheet()
 
