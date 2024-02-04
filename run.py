@@ -73,11 +73,11 @@ def ask_add_question():
     global enter_answer 
     global enter_description 
     global mode
-
-    mode_choice = input("1. Easy or 2. Hard\n")
     
+    # Ask user to pick easy mode or hard mode to add a question
     count = 0
     while count == 0:
+        mode_choice = input("1. Easy or 2. Hard\n")
         if mode_choice == "1":
             mode ="easy"
             count += 1
@@ -85,11 +85,12 @@ def ask_add_question():
             mode ="hard"
             count += 1
         else:
-            print("Please input only 1 or 2")
-            mode_choice = input("1. Easy or 2. Hard\n")
-        
-    enter_question = input("Please enter a question here")
-        
+            print("Please input only 1 or 2\n")
+    
+    # ask to add a new question     
+    enter_question = input("Please enter a question here\n")
+    
+    # ask to add an answer to the question    
     answer_count =0
     while answer_count == 0:
         print("1.TRUE or 2.FALSE for the answer\n")
@@ -100,8 +101,9 @@ def ask_add_question():
             answer_count +=1
         else:
             print("Please enter a number between number 1 and 2\n")
-        
-    enter_description = input("Add description of the question")
+    
+    # ask to add description for the question    
+    enter_description = input("Add description of the question\n")
         
 class AddQuiz:
 
