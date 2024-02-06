@@ -22,14 +22,6 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET =GSPREAD_CLIENT.open("tech_quiz")
 
 score_sheet = SHEET.worksheet("score")
-score_data = None
-
-def get_data():
-    """
-    Get all data from spread sheet
-    """
-    global score_data
-    score_data = score_sheet.get_all_values()
 
 def show_text_art(file):
     """
@@ -38,14 +30,21 @@ def show_text_art(file):
     file =open(file)
     get_art = file.read()
     file.close()
-    return get_art		
+    return get_art	
 
+# --------------------Check Score---------------------------
 class ScoreBoard:
     """
     Creates an instance of score
     """    
     def __init__(self, scores):
         self.scores = scores
+    
+    def refresh_data(self):
+        """
+        Refresh data from spread sheet
+        """        
+        self.scores
     
     def display_latest_five(self):
         """
@@ -71,6 +70,24 @@ class ScoreBoard:
         average = math.floor(average)
         print(f"\nYour average score calculated by last five scores is\n\n{average}")
         
+def check_score():
+    """
+    Scoreboard related functions are called and display
+    """
+    os.system("clear") 
+    art = show_text_art("assets/text-art/score.txt")
+    print(art)
+    print("-----------------------------------\n")
+    score_data = score_sheet.get_all_values()	
+    score = ScoreBoard(score_data)
+    score.refresh_data()
+    score.display_latest_five()
+    score.display_average()
+    input("\nEnter to home\n")
+    home()
+    
+# -----------------------Add Quiz----------------------------- 
+
 def ask_add_question():
     """
     Users can create a new quiz
@@ -212,21 +229,6 @@ def add_question():
     confirmation_add_quiz()
     question.add_to_spreadsheet(mode)
     ask_more_question()
-    
-def check_score():
-    """
-    Scoreboard related functions are called and display
-    """
-    os.system("clear") 
-    art = show_text_art("assets/text-art/score.txt")
-    print(art)
-    print("-----------------------------------\n")
-    get_data()
-    score = ScoreBoard(score_data)
-    score.display_latest_five()
-    score.display_average()
-    input("\nEnter to home\n")
-    home()
     
 # ------------------------- Game ------------------------------
 def home(): 
@@ -371,5 +373,5 @@ def continue_or_home():
         
 
 if __name__ == "__main__":
-    get_data()
+    # get_data()
     home()
