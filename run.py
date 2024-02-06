@@ -157,23 +157,14 @@ class Question:
         """
         time.sleep(1)
         return f"Question: {self.question}, Answer:{self.answer}, description:{self.description}\n"
-            
-class ToSpreadsheet(Question):
     
-    def __init__(self,enter_question,enter_answer,enter_description,mode):
-        """
-        Creates instance of ToSpreadSheet
-        """
-        super().__init__(enter_question,enter_answer,enter_description)
-        self.mode = mode
-    
-    def add_to_spreadsheet(self):
+    def add_to_spreadsheet(self,mode):
         """
         Add the quiz to the google spread sheet
         """
-        score_sheet = SHEET.worksheet(self.mode)           
+        score_sheet = SHEET.worksheet(mode)           
         score_sheet.append_row([self.question,self.answer,self.description])
-
+            
 def confirmation_add_quiz():
     """
     Ask users if they want to add a new quiz they made
@@ -219,8 +210,7 @@ def add_question():
     question = Question(enter_question,enter_answer,enter_description)
     print(question.user_input_quiz())
     confirmation_add_quiz()
-    spreadsheet = ToSpreadsheet(enter_question,enter_answer,enter_description,mode)
-    spreadsheet.add_to_spreadsheet()
+    question.add_to_spreadsheet(mode)
     ask_more_question()
     
 def check_score():
