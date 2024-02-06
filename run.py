@@ -206,6 +206,9 @@ def ask_more_question():
             print("Please Enter a number 1 or 2")             
             
 def add_question():
+    """
+    Add question related functions are called to display
+    """
     question = AddQuiz(enter_question,enter_answer,enter_description)
     print(question.user_input_quiz())
     confirmation_add_quiz()
@@ -214,6 +217,9 @@ def add_question():
     ask_more_question()
     
 def check_score():
+    """
+    Scoreboard related functions are called and display
+    """
     os.system("clear") 
     art = show_text_art("assets/text-art/score.txt")
     print(art)
