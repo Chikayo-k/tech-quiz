@@ -141,7 +141,7 @@ def ask_add_question():
     time.sleep(1)
     os.system("clear") 
     
-class AddQuiz:
+class Question:
 
     def __init__(self,enter_question,enter_answer,enter_description):
         """
@@ -158,7 +158,7 @@ class AddQuiz:
         time.sleep(1)
         return f"Question: {self.question}, Answer:{self.answer}, description:{self.description}\n"
             
-class ToSpreadsheet(AddQuiz):
+class ToSpreadsheet(Question):
     
     def __init__(self,enter_question,enter_answer,enter_description,mode):
         """
@@ -216,7 +216,7 @@ def add_question():
     """
     Add question related functions are called to display
     """
-    question = AddQuiz(enter_question,enter_answer,enter_description)
+    question = Question(enter_question,enter_answer,enter_description)
     print(question.user_input_quiz())
     confirmation_add_quiz()
     spreadsheet = ToSpreadsheet(enter_question,enter_answer,enter_description,mode)
