@@ -231,6 +231,7 @@ def add_question():
     ask_more_question()
     
 # ------------------------- Game ------------------------------
+
 def home(): 
     """
     Shows a landing terminal for users to select an option
@@ -334,14 +335,19 @@ def game_start():
             if user_answer == correct_answer:
                 time.sleep(1)
                 print(emoji.emojize("\n Your answer is correct! :check_mark_button: \n"))
-                time.sleep(2)
+                time.sleep(1)
+                print(x[2])
                 score += 20
+                time.sleep(1)
+                input("\nEnter: next question\n")
                 os.system("clear")
             else:
                 time.sleep(1)
                 print(emoji.emojize("\n Your answer is wrong :cross_mark:\n"))
+                time.sleep(1)
                 print(x[2])
-                time.sleep(3)
+                time.sleep(1)
+                input("\nEnter next question\n")
                 os.system("clear")
     
     art = show_text_art("assets/text-art/score.txt")
@@ -373,5 +379,4 @@ def continue_or_home():
         
 
 if __name__ == "__main__":
-    # get_data()
     home()
