@@ -1,5 +1,4 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 import gspread
 from google.oauth2.service_account import Credentials
 import random
@@ -33,6 +32,7 @@ def show_text_art(file):
     return get_art	
 
 # --------------------Check Score---------------------------
+
 class ScoreBoard:
     """
     Creates an instance of score
@@ -377,6 +377,5 @@ def continue_or_home():
         os.system("clear") 
         home()
         
-
 if __name__ == "__main__":
     home()
