@@ -22,7 +22,14 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET =GSPREAD_CLIENT.open("tech_quiz")
 
 score_sheet = SHEET.worksheet("score")
-score_data = score_sheet.get_all_values()	
+score_data = None
+
+def get_data():
+    """
+    Get all data from spread sheet
+    """
+    global score_data
+    score_data = score_sheet.get_all_values()
 
 def show_text_art(file):
     """
@@ -224,6 +231,7 @@ def check_score():
     art = show_text_art("assets/text-art/score.txt")
     print(art)
     print("-----------------------------------\n")
+    get_data()
     score = ScoreBoard(score_data)
     score.display_latest_five()
     score.display_average()
@@ -371,4 +379,7 @@ def continue_or_home():
         os.system("clear") 
         home()
         
-home()
+
+if __name__ == "__main__":
+    get_data()
+    home()
