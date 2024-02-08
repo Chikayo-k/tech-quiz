@@ -254,7 +254,7 @@ def pick_quiz_mode():
     os.system("clear")
     print("\n----------  Play Mode ----------\n")
     print("\nWould you like to play EASY mode or HARD mode ? \n")
-    print(emoji.emojize(":hatching_chick: 1. EASY"))
+    print(emoji.emojize(":hatching_chick: 1. Easy"))
     print(emoji.emojize(":chicken: 2. Hard\n"))
 
     count = 0
@@ -339,7 +339,7 @@ def game_start():
                 print(x[2])
                 score += 20
                 time.sleep(1)
-                input("\nEnter: next question\n")
+                input("\nHit enter to move to next question\n")
                 os.system("clear")
             else:
                 time.sleep(1)
@@ -347,7 +347,7 @@ def game_start():
                 time.sleep(1)
                 print(x[2])
                 time.sleep(1)
-                input("\nEnter next question\n")
+                input("\nHit enter to move to next question\n")
                 os.system("clear")
     
     art = show_text_art("assets/text-art/score.txt")
