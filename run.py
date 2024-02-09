@@ -183,7 +183,10 @@ class Question:
         Display quiz that user input
         """
         time.sleep(1)
-        return f"Question: {self.question}, Answer:{self.answer}, description:{self.description}\n"
+        user_question =  f"Question: {self.question}\n"
+        user_answer =  f"Answer: {self.answer}\n"
+        user_description =f"description: {self.description}\n"        
+        return user_question + user_answer + user_description
 
     def add_to_spreadsheet(self, mode):
         """
