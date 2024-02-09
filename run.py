@@ -72,7 +72,10 @@ class ScoreBoard:
         sum_scores = sum(list_int)
         average = sum_scores / 5
         average = math.floor(average)
-        print(f"\nYour average score calculated by last five scores is\n\n{average}")
+        print("\nAverage score calculated by last five scores is\n")
+        print("----------")
+        print(f"    {average}")
+        print("----------")
 
 
 def check_score():
@@ -342,7 +345,7 @@ def game_start():
             user_answer = 0
             try:
                 while user_answer not in range(1, 3):
-                    user_answer = int(input("Please enter a number 1 or 2 : \n"))
+                    user_answer = int(input("Please enter a number 1 or 2:\n"))
             except:
                 print("Please enter a number 1 or 2 : \n")
                 user_answer = int(input("Pleas Enter a number\n"))
@@ -351,7 +354,7 @@ def game_start():
             if user_answer == correct_answer:
                 time.sleep(1)
                 print(
-                    emoji.emojize("\n Your answer is correct! :check_mark_button: \n")
+                    emoji.emojize("\n Correct! :check_mark_button: \n")
                 )
                 time.sleep(1)
                 print(x[2])
@@ -361,7 +364,7 @@ def game_start():
                 os.system("clear")
             else:
                 time.sleep(1)
-                print(emoji.emojize("\n Your answer is wrong :cross_mark:\n"))
+                print(emoji.emojize("\n Wrong :cross_mark:\n"))
                 time.sleep(1)
                 print(x[2])
                 time.sleep(1)
@@ -378,7 +381,8 @@ def game_start():
 
 def continue_or_home():
     """
-    User can choose to play again or go back to the starting page after completing the game
+    User can choose to play again or
+    go back to the starting page after completing the game
     """
     print("Do you want to play again?\n")
     user_choice = 0
