@@ -392,6 +392,8 @@ def continue_or_home():
     """
     print("Do you want to play again?\n")
     user_choice = 0
+    # Reference
+    # https://stackoverflow.com/questions/59692444/how-do-create-while-loop-input-for-accept-only-1-or-2-as-input-in-py
     try:
         while user_choice not in range(1, 3):
             user_choice = int(input("1. Yes 2. No\n"))
