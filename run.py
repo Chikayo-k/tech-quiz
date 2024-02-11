@@ -264,7 +264,6 @@ def home():
     print(emoji.emojize(":laptop: 3  Check your score\n"))
     select_menu()
 
-
 def pick_quiz_mode():
     """
     Difficulty selection
