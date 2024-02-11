@@ -256,7 +256,7 @@ def home():
     os.system("clear")
     art = show_text_art("assets/text-art/techquiz.txt")
     print(art)
-    print(emoji.emojize(" :star: Welcome to the Tech Quiz :star: \n"))
+    print(emoji.emojize(" :star:Welcome to the Tech Quiz:star: \n"))
     print("This is a study tool for learning technical knowledge\n")
     print("----------  Menu  ----------\n")
     print(emoji.emojize(":triangular_flag: ---1 Start Quiz"))

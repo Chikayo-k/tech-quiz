@@ -71,3 +71,17 @@ Adding Questions
 12. Provide the user the option where to add the questions in the easy or hard quizzes
 13. Provide the user simple way to add questions
 14. Provide the user with a message so they know the questions has been added successfully.
+
+## Features
+
+Home Screen
+
+- Has a welcome message to users what the application is for.
+- Display the home screen menu
+- Gives the user 3 options to choose from
+- The three options are to start the game, Check their score or add questions to create their own quiz.
+
+Using text art and emojis the user can get the feeling it is a game. The welcome screen shows the user what kind of quiz this is and what they can expect.  
+The game was designed so that users can enjoy the quiz with minimal input. Using only the number pad they can choose from 3 different options.
+
+![alt text](image-1.png)
