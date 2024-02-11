@@ -46,3 +46,28 @@ Adding Questions
 12. As a user I want to choose the level where the questions will go
 13. As a user I want easy navigation when adding questions
 14. As a user I want to see a success message to let me know that a question has been added to the quiz
+
+## Features To Achieve These Goals
+
+Game
+
+1. Provide a technical quiz game
+2. Provide users with a menu.
+3. Provide users with a scorer board to track the attempts
+4. Provide different levels of difficulty
+5. Provide users the option to add their questions and add them to the existing quizzes
+6. Provide a simple and quick way of answering questions
+7. Provide visual feedback in the form of emojis.
+8. Provide the user with their score at the end of each set of questions
+
+Scoreboard
+
+9. Provide the last 5 scores.
+10. Provide the user with an average score from the last 5 attempts
+
+Adding Questions
+
+11. Provide the user with the option to add new questions to the quiz
+12. Provide the user the option where to add the questions in the easy or hard quizzes
+13. Provide the user simple way to add questions
+14. Provide the user with a message so they know the questions has been added successfully.
