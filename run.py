@@ -392,13 +392,14 @@ def continue_or_home():
     """
     print("Do you want to play again?\n")
     user_choice = 0
-
     try:
         while user_choice not in range(1, 3):
             user_choice = int(input("1. Yes 2. No\n"))
-    except KeyError as e:
-        print("Please enter a number 1 or 2 : \n")
-       
+    except ValueError as e:
+        print(f"error: {e} \n")
+        while user_choice not in range(1, 3):
+            user_choice = int(input("1. Yes 2. No\n"))
+
     if user_choice == 1:
         game_start()
     else:
