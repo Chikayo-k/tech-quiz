@@ -221,7 +221,7 @@ def ask_more_question():
     count = 0
     while count == 0:
         os.system("clear")
-        print("Do you want to add more quiz ?")
+        print("Do you want to add more question ?")
         answer = input("1.Yes 2.Home\n")
         if answer == "1":
             ask_add_question()
@@ -362,7 +362,7 @@ def game_start():
                 print(x[2])
                 score += 20
                 time.sleep(1)
-                input("\nHit enter to move to next question\n")
+                input("\nHit enter to continue\n")
                 os.system("clear")
             else:
                 time.sleep(1)
@@ -370,7 +370,7 @@ def game_start():
                 time.sleep(1)
                 print(x[2])
                 time.sleep(1)
-                input("\nHit enter to move to next question\n")
+                input("\nHit enter to continue\n")
                 os.system("clear")
 
     art = show_text_art("assets/text-art/score.txt")
