@@ -1,6 +1,6 @@
 # Tech Quiz
 
-![alt text](image.png)
+![Responsive image](assets/image/am-i-responsive.png)
 GitHub https://github.com/Chikayo-k/tech-quiz
 
 ## Project Goals
@@ -84,4 +84,21 @@ Home Screen
 Using text art and emojis the user can get the feeling it is a game. The welcome screen shows the user what kind of quiz this is and what they can expect.  
 The game was designed so that users can enjoy the quiz with minimal input. Using only the number pad they can choose from 3 different options.
 
-![alt text](image-1.png)
+![Home image](assets/image/home.png)
+
+Start Quiz
+
+- Easy mode
+- Hard mode
+
+The user can select from either easy or hard depending on their skill level. The questions will be pulled from an external spreadsheet using the google spreadsheet API. Which contains sets of questions for each.
+
+![Play mode image](assets/image/play-mode.png)
+
+- Display text art
+- The questions will display on the screen and ask the user to enter either true or false by choosing either 1 or 2.
+
+Using text art the user can see this is the start of the game.
+This is again to simplify the user's experience by only having 2 options to choose from.
+
+![Start image](assets/image/start.png)
