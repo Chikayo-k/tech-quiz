@@ -1,4 +1,3 @@
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
 import gspread
 from google.oauth2.service_account import Credentials
 import random
@@ -183,9 +182,9 @@ class Question:
         Display quiz that user input
         """
         time.sleep(1)
-        user_question =  f"Question: {self.question}\n"
-        user_answer =  f"Answer: {self.answer}\n"
-        user_description =f"description: {self.description}\n"        
+        user_question = f"Question: {self.question}\n"
+        user_answer = f"Answer: {self.answer}\n"
+        user_description = f"description: {self.description}\n"
         return user_question + user_answer + user_description
 
     def add_to_spreadsheet(self, mode):
@@ -349,19 +348,17 @@ def game_start():
             while try_count == 0:
                 if user_answer == "1":
                     user_answer = 1
-                    try_count += 1                  
+                    try_count += 1
                 elif user_answer == "2":
                     user_answer = 2
                     try_count += 1
                 else:
                     user_answer = input("Please enter a number 1 or 2:\n")
-                
+
             correct_answer = int(x[1])
             if user_answer == correct_answer:
                 time.sleep(1)
-                print(
-                    emoji.emojize("\n Correct! :check_mark_button: \n")
-                )
+                print(emoji.emojize("\n Correct! :check_mark_button: \n"))
                 time.sleep(1)
                 print(x[2])
                 score += 20
