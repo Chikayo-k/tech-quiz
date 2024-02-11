@@ -343,16 +343,19 @@ def game_start():
             print(f"\nQuestion {game_count}\n")
             print(x[0])
             print("\n1.True or 2.False?\n")
-            # Reference
-            # https://stackoverflow.com/questions/59692444/how-do-create-while-loop-input-for-accept-only-1-or-2-as-input-in-python
             user_answer = 0
-            try:
-                while user_answer not in range(1, 3):
-                    user_answer = int(input("Please enter a number 1 or 2:\n"))
-            except:
-                print("Please enter a number 1 or 2 : \n")
-                user_answer = int(input("Pleas Enter a number\n"))
-
+            try_count = 0
+            user_answer = input("Please enter a number 1 or 2:\n")
+            while try_count == 0:
+                if user_answer == "1":
+                    user_answer = 1
+                    try_count += 1                  
+                elif user_answer == "2":
+                    user_answer = 2
+                    try_count += 1
+                else:
+                    user_answer = input("Please enter a number 1 or 2:\n")
+                
             correct_answer = int(x[1])
             if user_answer == correct_answer:
                 time.sleep(1)
@@ -393,10 +396,9 @@ def continue_or_home():
     try:
         while user_choice not in range(1, 3):
             user_choice = int(input("1. Yes 2. No\n"))
-    except:
+    except KeyError as e:
         print("Please enter a number 1 or 2 : \n")
-        user_choice = int(input("1. Yes 2. No\n"))
-
+       
     if user_choice == 1:
         game_start()
     else:
