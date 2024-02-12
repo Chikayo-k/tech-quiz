@@ -74,7 +74,7 @@ Adding Questions
 
 ## Features
 
-Home Screen
+### Home Screen
 
 - Has a welcome message to users what the application is for.
 - Display the home screen menu
@@ -86,7 +86,7 @@ The game was designed so that users can enjoy the quiz with minimal input. Using
 
 ![Home image](assets/image/home.png)
 
-Start Quiz
+### Start Quiz
 
 - Easy mode
 - Hard mode
@@ -125,3 +125,35 @@ Wrong
 This will let the user see the progress they are making at the end of each game. It uses the number pad to simplify the selection for the users. By adding in text art and emojis it gives the user the feel of a game.
 
 ![Score image](assets/image/score.png)
+
+### Add Quiz
+
+- Text art to show the user they are on the add quiz section
+- Ask the user what mode of the quiz they want to add a question to or go back to the home screen.
+
+Users will see that this is the add quiz section by looking at the text art.
+Users will have the option to add questions to either the easy or hard mode.
+Having a home button increases user's accessibility in the game
+
+![Add quiz image](assets/image/add-quiz.png)
+
+Display the “Please enter a question here” shows clearly what needs to be entered here.
+The lead message shows on the screen which provides easy navigation for users
+
+![Lead message 1](assets/image/lead1.png)
+
+Once a user has entered a question they will need to set the answer to be true or false. This is done by simply selecting either 1 or 2
+
+![Lead message 2](assets/image/lead2.png)
+
+Description can be added. This is users choice.
+
+![Lead message 3](assets/image/lead3.png)
+
+When a question's answer and description have been successfully set it will display a success message. Which user can see the input feedback?
+
+![Confirmation image](assets/image/confirmation.png)
+
+After adding a question the user will be asked if they would like to add another question that lets the user add as many questions as they want.
+
+![Lead message 4](assets/image/lead4.png)
