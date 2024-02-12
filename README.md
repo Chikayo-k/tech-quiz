@@ -113,7 +113,15 @@ From the short description, the user can learn a bit more about the topic.
 The enter next question will let the user stay and read the description for as long as they want.
 
 Collect  
-![Question-Collect](assets/image/question.png)
+![Question-Collect image](assets/image/question.png)
 
 Wrong  
-![Wrong](assets/image/wrong.png)
+![Wrong image](assets/image/wrong.png)
+
+- Text art to show the user they are on the score section
+- Show the score at the end of the game
+- Ask the user if they would like to play again
+
+This will let the user see the progress they are making at the end of each game. It uses the number pad to simplify the selection for the users. By adding in text art and emojis it gives the user the feel of a game.
+
+![Score image](assets/image/score.png)
