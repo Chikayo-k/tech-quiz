@@ -84,7 +84,7 @@ Adding Questions
 Using text art and emojis the user can get the feeling it is a game. The welcome screen shows the user what kind of quiz this is and what they can expect.  
 The game was designed so that users can enjoy the quiz with minimal input. Using only the number pad they can choose from 3 different options.
 
-![Home image](assets/image/home.png)
+![Home image](assets/image/fetures/home.png)
 
 ### Start Quiz
 
@@ -93,7 +93,7 @@ The game was designed so that users can enjoy the quiz with minimal input. Using
 
 The user can select from either easy or hard depending on their skill level. The questions will be pulled from an external spreadsheet using the google spreadsheet API. Which contains sets of questions for each.
 
-![Play mode image](assets/image/play-mode.png)
+![Play mode image](assets/image/fetures/play-mode.png)
 
 - Display text art
 - The questions will display on the screen and ask the user to enter either true or false by choosing either 1 or 2.
@@ -101,7 +101,7 @@ The user can select from either easy or hard depending on their skill level. The
 Using text art the user can see this is the start of the game.
 This is again to simplify the user's experience by only having 2 options to choose from.
 
-![Start image](assets/image/start.png)
+![Start image](assets/image/fetures/start.png)
 
 - When the user selects a correct answer they will see a short message with a green tick to let them know it's right
 - When the user selects an incorrect answer they will see a short message with a red x to let them know it's wrong
@@ -113,10 +113,10 @@ From the short description, the user can learn a bit more about the topic.
 The enter next question will let the user stay and read the description for as long as they want.
 
 Collect  
-![Question-Collect image](assets/image/question.png)
+![Question-Collect image](assets/image/fetures/question.png)
 
 Wrong  
-![Wrong image](assets/image/wrong.png)
+![Wrong image](assets/image/fetures/wrong.png)
 
 - Text art to show the user they are on the score section
 - Show the score at the end of the game
@@ -124,7 +124,7 @@ Wrong
 
 This will let the user see the progress they are making at the end of each game. It uses the number pad to simplify the selection for the users. By adding in text art and emojis it gives the user the feel of a game.
 
-![Score image](assets/image/score.png)
+![Score image](assets/image/fetures/score.png)
 
 ### Add Quiz
 
@@ -135,28 +135,28 @@ Users will see that this is the add quiz section by looking at the text art.
 Users will have the option to add questions to either the easy or hard mode.
 Having a home button increases user's accessibility in the game
 
-![Add quiz image](assets/image/add-quiz.png)
+![Add quiz image](assets/image/fetures/add-quiz.png)
 
 Display the “Please enter a question here” shows clearly what needs to be entered here.
 The lead message shows on the screen which provides easy navigation for users
 
-![Lead message 1](assets/image/lead1.png)
+![Lead message 1](assets/image/fetures/lead1.png)
 
 Once a user has entered a question they will need to set the answer to be true or false. This is done by simply selecting either 1 or 2
 
-![Lead message 2](assets/image/lead2.png)
+![Lead message 2](assets/image/fetures/lead2.png)
 
 Description can be added. This is users choice.
 
-![Lead message 3](assets/image/lead3.png)
+![Lead message 3](assets/image/fetures/lead3.png)
 
 When a question's answer and description have been successfully set it will display a success message. Which user can see the input feedback?
 
-![Confirmation image](assets/image/confirmation.png)
+![Confirmation image](assets/image/fetures/confirmation.png)
 
 After adding a question the user will be asked if they would like to add another question that lets the user add as many questions as they want.
 
-![Lead message 4](assets/image/lead4.png)
+![Lead message 4](assets/image/fetures/lead4.png)
 
 ### Scoreboard
 
@@ -172,4 +172,22 @@ User will be able to see their scores in a list from the oldest down to the newe
 Users can see the average which can help give them an idea of how they are doing on the quizzes.  
 Users can simply navigate to the home screen by hitting the enter key.
 
-![Scoreboard](assets/image/scoreboard.png)
+![Scoreboard](assets/image/fetures/scoreboard.png)
+
+## Data Model
+
+A Google Sheet was used to store the game data.
+There are three worksheets for easy game mode, hard game mode and the score to store.
+
+![Google sheets](assets/image/google-sheets.png)
+
+## Technologies
+
+- Python 3
+- Google spreadsheet API
+- Heroku - backend deployment
+- GitHub - version and source control
+
+## Testing
+
+Python Linter
