@@ -188,6 +188,15 @@ There are three worksheets for easy game mode, hard game mode and the score to s
 - Heroku - backend deployment
 - GitHub - version and source control
 
-## Testing
+## Testing / Bugs
 
-Python Linter
+### Python Linter
+
+White space, and blank lines issues are solved by using [Python formatter](https://codebeautify.org/python-formatter-beautifier).
+
+![Linter test 1](assets/image/testing/linter-test1.png)
+
+The E501 error came up because the code was being too long.
+I fixed the error by adjusting the word of the length.
+
+![Linter test 2](assets/image/testing/linter-test2.png)
