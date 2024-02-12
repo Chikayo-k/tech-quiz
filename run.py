@@ -375,7 +375,7 @@ def game_start():
 
     art = show_text_art("assets/text-art/score.txt")
     print(art)
-    print(emoji.emojize(f":light_bulb: Your score is {score} :light_bulb:\n"))
+    print(emoji.emojize(f":light_bulb: Your score is {score}:light_bulb:\n"))
     score_sheet.append_row([score])
     time.sleep(2)
     continue_or_home()
