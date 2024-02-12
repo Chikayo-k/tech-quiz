@@ -102,3 +102,18 @@ Using text art the user can see this is the start of the game.
 This is again to simplify the user's experience by only having 2 options to choose from.
 
 ![Start image](assets/image/start.png)
+
+- When the user selects a correct answer they will see a short message with a green tick to let them know it's right
+- When the user selects an incorrect answer they will see a short message with a red x to let them know it's wrong
+- Provides the user with a short description of the answer.
+- Enter to next question
+
+This will allow the user to see if they are making progress in the quiz by showing either a green tick or a red x and provide them with clear and quick feedback.
+From the short description, the user can learn a bit more about the topic.
+The enter next question will let the user stay and read the description for as long as they want.
+
+Collect  
+![Question-Collect](assets/image/question.png)
+
+Wrong  
+![Wrong](assets/image/wrong.png)
