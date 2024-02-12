@@ -157,3 +157,19 @@ When a question's answer and description have been successfully set it will disp
 After adding a question the user will be asked if they would like to add another question that lets the user add as many questions as they want.
 
 ![Lead message 4](assets/image/lead4.png)
+
+### Scoreboard
+
+- Text art shows this is the score section.
+- This will display the last five score attempts the user has made.
+- The scores are ordered from oldest to newest with the oldest attempt being no 1 and the last attempt being no 5.
+- There is an average score calculated by the last five scores.
+- User can return home by entering the enter key.
+
+Users will see this is the score section from the text art.  
+Users will be able to track the attempts they have made and see how they are doing.  
+User will be able to see their scores in a list from the oldest down to the newest.  
+Users can see the average which can help give them an idea of how they are doing on the quizzes.  
+Users can simply navigate to the home screen by hitting the enter key.
+
+![Scoreboard](assets/image/scoreboard.png)
