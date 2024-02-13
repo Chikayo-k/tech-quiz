@@ -217,3 +217,7 @@ The bare expect issue was fixed but when the user does not type numbers more tha
 All the errors are fixed. Now there is no error.
 
 ![Python Linter test (NO error)](assets/image/testing/test-no-error.png)
+
+## Browser Test
+
+The application is deployed using Heroku as part of testing the deployed version of the application It was checked on Google Chrome, Edge, and Firefox and all worked and functioned as expected.
