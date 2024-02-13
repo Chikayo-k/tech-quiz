@@ -248,3 +248,28 @@ The application is deployed using Heroku as part of testing the deployed version
 | Tested after five questions, it will display the score of the current attempt.                                             | Pass       |
 | Tested that the displayed score is added to the spreadsheet.                                                               | Pass       |
 | Tested user can choose to play again or return home.                                                                       | Pass       |
+
+### Add question
+
+| **Feature**                                                                                                                              | **Result** |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| Tested user can select which mode to add their questions to.                                                                             | Pass       |
+| Tested when a question is entered it will display a success message.                                                                     | Pass       |
+| Tested when setting the answer to either 1 or 2 (True or False) it displays a success message.                                           | Pass       |
+| Tested when a description is entered it will display a success message.                                                                  | Pass       |
+| Tested when a description is not entered it will display a success message. (In case users choose not to add a description)              | Pass       |
+| Tested when a question is added it will display what the user has entered and will ask them to confirm before adding to the spreadsheet. | Pass       |
+| Tested when a user can choose to add another question.                                                                                   | Pass       |
+| Tested when a user does not add another question.                                                                                        | Pass       |
+| Tested that when adding questions, answers, and descriptions they go to the correct spreadsheet.                                         | Pass       |
+| Tested that the user is asked if they would like to add another question.                                                                | Pass       |
+| Tested when the user returns to the home screen.                                                                                         | Pass       |
+
+### Scoreboard section
+
+| **Feature**                                                                    | **Result** |
+| ------------------------------------------------------------------------------ | ---------- |
+| Tested when the user checks the score it will display the scoreboard.          | Pass       |
+| Tested when on the scoreboard page there is a list of the last 5 attempts.     | Pass       |
+| Tested when on the scoreboard page there is an average of the last 5 attempts. | Pass       |
+| Tested when pressing enter it returns to the main page                         | Pass       |
