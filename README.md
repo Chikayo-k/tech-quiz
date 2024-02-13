@@ -318,3 +318,16 @@ The application is deployed using Heroku as part of testing the deployed version
 9. git checkout main ( switch to the main branch)
 10. New files aren't here. Do a git pull origin main – to pull the new changes to the local repository
 11. Run the project and test the new changes that have been applied
+
+### Clone
+
+1. clicking on the code dropdown in the main repository.
+2. Copying the SSH URL
+3. I opened my git bash terminal and cloned the project to a folder on my desktop.
+
+### Fork
+
+A Git fork is when an existing repository has a copy taken of it and it becomes its new repository no longer being attached to or tracking the commits of the original repository. I used the original project I had cloned at the start. I could not fork the project the repository as I am the owner but the steps to fork are
+
+1. Open the repository on GitHub and select the Fork dropdown
+2. Click fork you will have a full copy of the repository.
