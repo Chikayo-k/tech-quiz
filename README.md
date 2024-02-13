@@ -221,3 +221,30 @@ All the errors are fixed. Now there is no error.
 ## Browser Test
 
 The application is deployed using Heroku as part of testing the deployed version of the application It was checked on Google Chrome, Edge, and Firefox and all worked and functioned as expected.
+
+## Features Test
+
+### Home Menu Section
+
+| **Feature**                                                                                                   | **Result** |
+| ------------------------------------------------------------------------------------------------------------- | ---------- |
+| Tested home screen display correctly.                                                                         | Pass       |
+| Tested input 1 in the home display brings users to the game section.                                          | Pass       |
+| Tested input 2 in the home brings users to the add quiz section.                                              | Pass       |
+| Tested in input 3 will display the scoreboard.                                                                | Pass       |
+| Tested if user input is between 1 – 3 and if not displays a message indicating to use a number between 1 – 3. | Pass       |
+
+### Game section
+
+| **Feature**                                                                                                                | **Result** |
+| -------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| Tested if users can select easy mode or hard mode.                                                                         | Pass       |
+| Tested quizzes are created from the user-chosen mode.                                                                      | Pass       |
+| Tested quizzes are shown randomly from the spreadsheet.                                                                    | Pass       |
+| Tested if user input of answer works properly.                                                                             | Pass       |
+| Tested when a correct answer is selected.                                                                                  | Pass       |
+| Tested when an incorrect answer is selected.                                                                               | Pass       |
+| Tested the description of the quiz is correct after the user answers the question when it is available in the spreadsheet. | Pass       |
+| Tested after five questions, it will display the score of the current attempt.                                             | Pass       |
+| Tested that the displayed score is added to the spreadsheet.                                                               | Pass       |
+| Tested user can choose to play again or return home.                                                                       | Pass       |
