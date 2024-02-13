@@ -292,3 +292,29 @@ The application is deployed using Heroku as part of testing the deployed version
 | 12     | As a user, I want to choose the level where the questions will go                                    | User can choose to add questions to easy mode or hard mode                                                        | Work as expected |
 | 13     | As a user, I want easy navigation when adding questions                                              | There is a message prompt when adding their questions                                                             | Work as expected |
 | 14     | As a user, I want to see a success message to let me know that a question has been added to the quiz | There is clear feedback when the question is added to the spreadsheet                                             | Work as expected |
+
+## Branch
+
+### Marge Branch
+
+1. Click branch.
+2. Create a branch using the main branch as the source give it a name specific to the feature being developed on the branch.
+3. Refresh the page and I can see the newly created branch
+4. Go to the workspace to check where in the repository I am using git status.
+5. Using git branch -a I can see what branches are available locally.
+6. I can’t see the branch I created so I need to use a git fetch
+7. The newly created branch is pulled using git checkout with the new branch name to switch from the current branch to the new branch
+
+### Merge The Branch Into Main
+
+1. Once I have finished working on the new branch and have pushed the code, I see the compare and pull request at the top.
+2. I click it and review code changes and add a description
+3. I Click Merge pull request and confirm the merge
+4. I will see a success message showing that the merge was a success
+5. Check main for the new changes and that the deployment is working
+6. I open the VS code git bash terminal
+7. git status ( make sure the branch is up to date)
+8. I am no longer working on the new branch so I want to switch back to the main branch
+9. git checkout main ( switch to the main branch)
+10. New files aren't here. Do a git pull origin main – to pull the new changes to the local repository
+11. Run the project and test the new changes that have been applied
