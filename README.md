@@ -293,6 +293,28 @@ The application is deployed using Heroku as part of testing the deployed version
 | 13     | As a user, I want easy navigation when adding questions                                              | There is a message prompt when adding their questions                                                             | Work as expected |
 | 14     | As a user, I want to see a success message to let me know that a question has been added to the quiz | There is clear feedback when the question is added to the spreadsheet                                             | Work as expected |
 
+## Deployment
+
+The code is stored on GitHub.  
+The project was deployed using HEROKU.
+
+1. Create requirements for deployment on the project file
+2. Create a Heroku account and set it up if needed
+3. Click the Create New App button
+4. Name the App and select a region then click Create App
+5. Click the settings tab and create the Config Vars.
+6. Enter the following:
+   Key = CREADS / Value = Copy and paste all the creds.json file.
+   and Key = PORT / Value = 8000
+7. Click the Add buildpack select Python and save the changes.
+8. Add buildpack select node.js and save changes.
+9. Go back to the deploy section
+10. Choose the deployment method for GitHub
+11. Click the Connect to GitHub button
+12. Search for a repository name and connect to link up the Heroku App to the GitHub repository code.
+13. Use the Manual deploy option and click the Deploy Branch button
+14. When the App is successfully deployed, the View button will show up. the button is the deployed link.
+
 ## Branch
 
 ### Marge Branch
@@ -319,13 +341,13 @@ The application is deployed using Heroku as part of testing the deployed version
 10. New files aren't here. Do a git pull origin main – to pull the new changes to the local repository
 11. Run the project and test the new changes that have been applied
 
-### Clone
+## Clone
 
 1. clicking on the code dropdown in the main repository.
 2. Copying the SSH URL
 3. I opened my git bash terminal and cloned the project to a folder on my desktop.
 
-### Fork
+## Fork
 
 A Git fork is when an existing repository has a copy taken of it and it becomes its new repository no longer being attached to or tracking the commits of the original repository. I used the original project I had cloned at the start. I could not fork the project the repository as I am the owner but the steps to fork are
 
