@@ -200,3 +200,16 @@ The E501 error came up because the code was being too long.
 I fixed the error by adjusting the word of the length.
 
 ![Linter test 2](assets/image/testing/linter-test2.png)
+
+There was an error in using bare except.
+
+![Bare expect issue](assets/image/testing/bare-expect.png)
+
+To fix it, catch the errors with Valid error “as” e.
+This solved the issue when testing.
+
+![Bare expect fixed](assets/image/testing/bare-expext-fixed.png)
+
+The bare expect issue was fixed but when the user does not type numbers more than twice the error shows up and the game will be stopped. Finally, this was resolved by using the if elif statement.
+
+![fixed error](assets/image/testing/error-fixed.png)
