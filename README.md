@@ -273,3 +273,22 @@ The application is deployed using Heroku as part of testing the deployed version
 | Tested when on the scoreboard page there is a list of the last 5 attempts.     | Pass       |
 | Tested when on the scoreboard page there is an average of the last 5 attempts. | Pass       |
 | Tested when pressing enter it returns to the main page                         | Pass       |
+
+## User Story Test
+
+| **No** | **User story**                                                                                       | **Expected Result**                                                                                               | **Outcome**      |
+| ------ | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ---------------- |
+| 1      | As a user I want to build my knowledge around programming terms and topics                           | I can use this application as a tool to test myself in short technical quizzes to learn programming               | Work as expected |
+| 2      | As a user I want to see the menu so I can select an option                                           | I can see the menu and choose what I would like to do                                                             | Work as expected |
+| 3      | As a user, I want to be able to track my attempts                                                    | There is a scoreboard section which shows the score                                                               | Work as expected |
+| 4      | As a user I want to be able to have different levels of difficulty to help me progress.              | There is an easy mode and a difficult mode to use                                                                 | Work as expected |
+| 5      | As a user, I want to be able to build my own quizzes to learn new things                             | Provided a feature that users can add their questions. The questions can be added to both easy and hard modes     | Work as expected |
+| 6      | As a user, I want a simple experience when answering questions.                                      | The game answers are true or false. I only needed to type 1 or 2 to answer the question.                          | Work as expected |
+| 7      | As a user, I want instant visual feedback when answering questions.                                  | Whenever a question is answered, I will know whether the answer is correct or not by seeing a green tick or red x | Work as expected |
+| 8      | As a user, I want to see my score at the end of each quiz.                                           | The score will be shown at the end of the quiz                                                                    | Work as expected |
+| 9      | As a user, I want to see my previous scores                                                          | The scoreboard is provided.                                                                                       | Work as expected |
+| 10     | As a user I want to see my average score                                                             | In the scoreboard section, there is an average score calculated by the latest five scores                         | Work as expected |
+| 11     | As a user, I want to add new questions                                                               | There is a section that user can add their own questions to the quizzes                                           | Work as expected |
+| 12     | As a user, I want to choose the level where the questions will go                                    | User can choose to add questions to easy mode or hard mode                                                        | Work as expected |
+| 13     | As a user, I want easy navigation when adding questions                                              | There is a message prompt when adding their questions                                                             | Work as expected |
+| 14     | As a user, I want to see a success message to let me know that a question has been added to the quiz | There is clear feedback when the question is added to the spreadsheet                                             | Work as expected |
