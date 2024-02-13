@@ -213,3 +213,7 @@ This solved the issue when testing.
 The bare expect issue was fixed but when the user does not type numbers more than twice the error shows up and the game will be stopped. Finally, this was resolved by using the if elif statement.
 
 ![fixed error](assets/image/testing/error-fixed.png)
+
+All the errors are fixed. Now there is no error.
+
+![Python Linter test (NO error)](assets/image/testing/test-no-error.png)
