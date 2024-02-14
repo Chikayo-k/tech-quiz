@@ -72,6 +72,12 @@ Adding Questions
 13. Provide the user simple way to add questions
 14. Provide the user with a message so they know the questions has been added successfully.
 
+## Flow Chart
+
+This is the flow chart of the application. This diagram shows the flow a user can take when selecting the easy mode of the game. Hard mode works just same as easy mode. It shows flow of how a user can enter a question and how they can return to the main menu.
+
+![Flow Chart](assets/image/flow-chart.jpg)
+
 ## Features
 
 ### Home Screen
