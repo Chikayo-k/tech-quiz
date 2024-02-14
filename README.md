@@ -353,3 +353,24 @@ A Git fork is when an existing repository has a copy taken of it and it becomes 
 
 1. Open the repository on GitHub and select the Fork dropdown
 2. Click fork you will have a full copy of the repository.
+
+## Reference
+
+I used study materials from Code Institute and the Love Sandwiches walkthrough project in coming up with the idea for my project.
+I used w3schools to check how to write code as well as the different types of methods that were available in Python.
+
+The URL down below are also referenced for this project
+
+how do create while loop input for accept only 1 or 2 as input in python?
+https://stackoverflow.com/questions/59692444/how-do-create-while-loop-input-for-accept-only-1-or-2-as-input-in-python  
+EMOJI  
+https://pypi.org/project/emoji/  
+https://unicode.org/emoji/charts/full-emoji-list.html  
+Color  
+https://pypi.org/project/termcolor/  
+Text art generator  
+https://tools.picsart.com/text/font-generator/text-art/  
+clear the terminal  
+https://www.scaler.com/topics/how-to-clear-screen-in-python/  
+sleep time  
+https://magazine.techacademy.jp/magazine/15822
