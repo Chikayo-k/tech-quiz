@@ -264,6 +264,7 @@ def home():
     print(emoji.emojize(":laptop: ---3 Check your score\n"))
     select_menu()
 
+
 def pick_quiz_mode():
     """
     Difficulty selection
@@ -390,7 +391,7 @@ def continue_or_home():
     user_choice = 0
     count = 0
     user_choice = input("1. Yes 2. No\n")
-    
+
     while count == 0:
         if user_choice == "1":
             user_choice = 1
@@ -415,4 +416,3 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         os.system("clear")
         home()
-        
