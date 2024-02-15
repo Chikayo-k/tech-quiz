@@ -410,4 +410,9 @@ def continue_or_home():
 
 
 if __name__ == "__main__":
-    home()
+    try:
+        home()
+    except KeyboardInterrupt:
+        os.system("clear")
+        home()
+        
