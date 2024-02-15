@@ -2,6 +2,7 @@
 
 ![Responsive image](assets/image/am-i-responsive.png)
 GitHub https://github.com/Chikayo-k/tech-quiz
+Heroku
 
 ## Project Goals
 
@@ -310,7 +311,7 @@ The project was deployed using HEROKU.
 4. Name the App and select a region then click Create App
 5. Click the settings tab and create the Config Vars.
 6. Enter the following:
-   Key = CREADS / Value = Copy and paste all the creds.json file.
+   Key = CREDS / Value = Copy and paste all the creds.json file.
    and Key = PORT / Value = 8000
 7. Click the Add buildpack select Python and save the changes.
 8. Add buildpack select node.js and save changes.
