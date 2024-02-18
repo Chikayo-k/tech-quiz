@@ -1,7 +1,8 @@
 # Tech Quiz
 
 ![Responsive image](assets/image/am-i-responsive.png)
-GitHub https://github.com/Chikayo-k/tech-quiz
+GitHub https://github.com/Chikayo-k/tech-quiz  
+Live https://tech-quiz-d39e07dafaee.herokuapp.com/
 
 ## Project Goals
 
