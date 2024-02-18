@@ -390,5 +390,5 @@ clear the terminal
 https://www.scaler.com/topics/how-to-clear-screen-in-python/  
 sleep time  
 https://magazine.techacademy.jp/magazine/15822
-How to convert a nested list into a one-dimensional list in Python?
+How to convert a nested list into a one-dimensional list in Python?  
 https://stackoverflow.com/questions/17485747/how-to-convert-a-nested-list-into-a-one-dimensional-list-in-python
