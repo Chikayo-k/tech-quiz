@@ -239,6 +239,9 @@ The application is deployed using Heroku as part of testing the deployed version
 | Tested input 2 in the home brings users to the add quiz section.                                              | Pass       |
 | Tested in input 3 will display the scoreboard.                                                                | Pass       |
 | Tested if user input is between 1 – 3 and if not displays a message indicating to use a number between 1 – 3. | Pass       |
+| Tested when a user inputs an invalid value, a message shows up to indicate the proper value to input          | pass       |
+
+|
 
 ### Game section
 
@@ -254,6 +257,9 @@ The application is deployed using Heroku as part of testing the deployed version
 | Tested after five questions, it will display the score of the current attempt.                                             | Pass       |
 | Tested that the displayed score is added to the spreadsheet.                                                               | Pass       |
 | Tested user can choose to play again or return home.                                                                       | Pass       |
+| Tested when a user inputs an invalid value, a message shows up to indicate the proper value to input                       | pass       |
+
+|
 
 ### Add question
 
@@ -270,6 +276,9 @@ The application is deployed using Heroku as part of testing the deployed version
 | Tested that when adding questions, answers, and descriptions they go to the correct spreadsheet.                                         | Pass       |
 | Tested that the user is asked if they would like to add another question.                                                                | Pass       |
 | Tested when the user returns to the home screen.                                                                                         | Pass       |
+| Tested when a user inputs an invalid value, a message shows up to indicate the proper value to input                                     | pass       |
+
+|
 
 ### Scoreboard section
 
