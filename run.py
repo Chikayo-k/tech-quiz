@@ -256,13 +256,14 @@ def home():
     os.system("clear")
     art = show_text_art("assets/text-art/techquiz.txt")
     print(art)
-    print(emoji.emojize(" :star: Welcome to the Tech Quiz :star: \n"))
+    print(emoji.emojize(" :star:Welcome to the Tech Quiz:star: \n"))
     print("This is a study tool for learning technical knowledge\n")
     print("----------  Menu  ----------\n")
     print(emoji.emojize(":triangular_flag: ---1 Start Quiz"))
     print(emoji.emojize(":pencil: ---2 Add your own quiz and answers"))
     print(emoji.emojize(":laptop: ---3 Check your score\n"))
     select_menu()
+
 
 def pick_quiz_mode():
     """
@@ -375,7 +376,7 @@ def game_start():
 
     art = show_text_art("assets/text-art/score.txt")
     print(art)
-    print(emoji.emojize(f":light_bulb: Your score is {score} :light_bulb:\n"))
+    print(emoji.emojize(f":light_bulb: Your score is {score}:light_bulb:\n"))
     score_sheet.append_row([score])
     time.sleep(2)
     continue_or_home()
@@ -388,15 +389,19 @@ def continue_or_home():
     """
     print("Do you want to play again?\n")
     user_choice = 0
-    # Reference
-    # https://stackoverflow.com/questions/59692444/how-do-create-while-loop-input-for-accept-only-1-or-2-as-input-in-py
-    try:
-        while user_choice not in range(1, 3):
-            user_choice = int(input("1. Yes 2. No\n"))
-    except ValueError as e:
-        print(f"error: {e} \n")
-        while user_choice not in range(1, 3):
-            user_choice = int(input("1. Yes 2. No\n"))
+    count = 0
+    user_choice = input("1. Yes 2. No\n")
+
+    while count == 0:
+        if user_choice == "1":
+            user_choice = 1
+            count += 1
+        elif user_choice == "2":
+            user_choice = 2
+            count += 1
+        else:
+            print("Please enter a number 1 or 2")
+            user_choice = input("1. Yes 2. No\n")
 
     if user_choice == 1:
         game_start()
@@ -406,4 +411,8 @@ def continue_or_home():
 
 
 if __name__ == "__main__":
-    home()
+    try:
+        home()
+    except KeyboardInterrupt:
+        os.system("clear")
+        home()
