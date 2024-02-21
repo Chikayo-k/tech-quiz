@@ -75,7 +75,7 @@ Adding Questions
 
 ## Flow Chart
 
-This is the flow chart of the application. This diagram shows the flow a user can take when selecting the easy mode of the game. Hard mode works just same as easy mode. It shows flow of how a user can enter a question and how they can return to the main menu.
+This is the flow chart of the application. This diagram shows the flow a user can take when selecting the easy mode of the game. Hard mode works just same as easy mode. It shows the flow of how a user can enter a question and how they can return to the main menu.
 
 ![Flow Chart](assets/image/flow-chart.jpg)
 
@@ -119,8 +119,8 @@ This will allow the user to see if they are making progress in the quiz by showi
 From the short description, the user can learn a bit more about the topic.
 The enter next question will let the user stay and read the description for as long as they want.
 
-Collect  
-![Question-Collect image](assets/image/fetures/question.png)
+Correct
+![Question-Correct image](assets/image/fetures/question.png)
 
 Wrong  
 ![Wrong image](assets/image/fetures/wrong.png)
@@ -161,7 +161,7 @@ When a question's answer and description have been successfully set it will disp
 
 ![Confirmation image](assets/image/fetures/confirmation.png)
 
-After adding a question the user will be asked if they would like to add another question that lets the user add as many questions as they want.
+After adding a question the user will be asked if they would like to add another question. They can continue and add as many questions as they want. When finished they can return home.
 
 ![Lead message 4](assets/image/fetures/lead4.png)
 
@@ -203,8 +203,9 @@ White space, and blank lines issues are solved by using [Python formatter](https
 
 ![Linter test 1](assets/image/testing/linter-test1.png)
 
-The E501 error came up because the code was being too long.
-I fixed the error by adjusting the word of the length.
+The E501 error came up because the line of code was exceeding the
+recommended length.
+I fixed the error by reducing the character length on that line.
 
 ![Linter test 2](assets/image/testing/linter-test2.png)
 
@@ -217,7 +218,7 @@ This solved the issue when testing.
 
 ![Bare expect fixed](assets/image/testing/bare-expext-fixed.png)
 
-The bare expect issue was fixed but when the user does not type numbers more than twice the error shows up and the game will be stopped. Finally, this was resolved by using the if elif statement.
+The bare expect issue was fixed but when the user would enter a character that wasn't a number the error would show up and the game will be stop running. This was resolved by using the if elif statement.
 
 ![fixed error](assets/image/testing/error-fixed.png)
 
@@ -242,8 +243,6 @@ The application is deployed using Heroku as part of testing the deployed version
 | Tested if user input is between 1 – 3 and if not displays a message indicating to use a number between 1 – 3. | Pass       |
 | Tested when a user inputs an invalid value, a message shows up to indicate the proper value to input          | pass       |
 
-|
-
 ### Game section
 
 | **Feature**                                                                                                                | **Result** |
@@ -259,8 +258,6 @@ The application is deployed using Heroku as part of testing the deployed version
 | Tested that the displayed score is added to the spreadsheet.                                                               | Pass       |
 | Tested user can choose to play again or return home.                                                                       | Pass       |
 | Tested when a user inputs an invalid value, a message shows up to indicate the proper value to input                       | pass       |
-
-|
 
 ### Add question
 
@@ -278,8 +275,6 @@ The application is deployed using Heroku as part of testing the deployed version
 | Tested that the user is asked if they would like to add another question.                                                                | Pass       |
 | Tested when the user returns to the home screen.                                                                                         | Pass       |
 | Tested when a user inputs an invalid value, a message shows up to indicate the proper value to input                                     | pass       |
-
-|
 
 ### Scoreboard section
 
@@ -359,7 +354,7 @@ The project was deployed using HEROKU.
 
 ## Clone
 
-1. clicking on the code dropdown in the main repository.
+1. Clicking on the code dropdown in the main repository.
 2. Copying the SSH URL
 3. I opened my git bash terminal and cloned the project to a folder on my desktop.
 
